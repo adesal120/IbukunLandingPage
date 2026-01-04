@@ -1,45 +1,56 @@
 import { motion } from "framer-motion";
 import { achievements, interests } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Award, Heart, Sparkles, CheckCircle2 } from "lucide-react";
+import { Trophy, Award, Heart, Sparkles, CheckCircle2, Star } from "lucide-react";
 
 export default function AchievementsAndInterests() {
   return (
     <section id="achievements" className="py-24 bg-secondary/10">
       <div className="container px-6">
         
-        {/* Achievements Section - Redesigned */}
+        {/* Achievements Section - Redesigned v3 (Numbered/Editorial Style) */}
         <div className="mb-32">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-start text-left mb-12"
+            className="flex flex-col items-start text-left mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-4">
-              <Trophy className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-4 border border-primary/20">
+              <Trophy className="w-3.5 h-3.5" />
               <span className="text-xs font-bold uppercase tracking-wider">Recognition</span>
             </div>
-            <h2 className="text-4xl font-display font-bold">Honors & Awards</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight">Honors & Awards</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {achievements.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="flex gap-4 items-start group"
+                className="group relative"
               >
-                <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                </div>
-                <div className="pt-0.5 border-b border-border/50 pb-6 w-full group-hover:border-primary/30 transition-colors">
-                  <p className="text-base md:text-lg font-medium leading-snug text-foreground/90 group-hover:text-primary transition-colors">
-                    {item}
-                  </p>
+                <div className="h-full bg-background border border-border/60 p-6 rounded-2xl hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col items-start gap-4">
+                  {/* Decorative Number */}
+                  <span className="text-4xl font-display font-black text-border/40 group-hover:text-primary/20 transition-colors">
+                    {(index + 1).toString().padStart(2, '0')}
+                  </span>
+                  
+                  {/* Content */}
+                  <div className="relative">
+                    <p className="font-medium text-lg leading-snug group-hover:text-primary transition-colors">
+                      {item}
+                    </p>
+                    <div className="absolute -left-6 top-1 w-1 h-0 bg-primary group-hover:h-full transition-all duration-300" />
+                  </div>
+
+                  {/* Icon */}
+                  <div className="mt-auto pt-4 w-full flex justify-end">
+                     <Star className="w-5 h-5 text-muted-foreground/30 group-hover:text-primary group-hover:fill-current transition-all" />
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -57,9 +68,9 @@ export default function AchievementsAndInterests() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="inline-flex items-center gap-2 mb-6 text-primary">
-                <Heart className="w-5 h-5 fill-current" />
-                <span className="text-sm font-semibold uppercase tracking-wider">Personal Interests</span>
+              <div className="inline-flex items-center gap-2 mb-6 text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                <Heart className="w-3.5 h-3.5 fill-current" />
+                <span className="text-xs font-bold uppercase tracking-wider">Personal Interests</span>
               </div>
               
               <h3 className="text-3xl md:text-4xl font-display font-bold mb-8">

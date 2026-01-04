@@ -1,85 +1,71 @@
 import { motion } from "framer-motion";
-import avatarImage from "@assets/generated_images/professional_minimal_avatar_placeholder.png";
 import heroBg from "@assets/generated_images/vibrant_abstract_gradient_mesh_background.png";
-import { ArrowDown, Mail, Linkedin, Twitter } from "lucide-react";
+import { Twitter, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section id="about" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section id="about" className="relative min-h-screen flex items-center justify-center pt-20 pb-12 overflow-hidden">
       
-      {/* Background (Simplified) */}
-      <div className="absolute inset-0 z-0 opacity-40">
+      {/* Background (Subtle) */}
+      <div className="absolute inset-0 z-0 opacity-20 dark:opacity-10">
          <img 
             src={heroBg} 
             alt="Background" 
             className="w-full h-full object-cover blur-3xl scale-110"
           />
-         <div className="absolute inset-0 bg-background/80" />
+         <div className="absolute inset-0 bg-background/90" />
       </div>
 
-      <div className="container px-6 z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container px-6 z-10 max-w-4xl mx-auto text-center">
         
-        {/* Text Content */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-primary/10 text-primary border border-primary/20">
-            <span className="text-xs font-semibold tracking-wide uppercase">Technologist & Founder</span>
+          <div className="inline-block px-4 py-1.5 mb-8 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm">
+            <span className="text-xs font-bold tracking-widest uppercase">Technologist & Founder</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6">
+          <h1 className="text-6xl md:text-8xl font-display font-black tracking-tighter mb-6">
             Ibukun<span className="text-primary">.</span>
           </h1>
           
-          <p className="text-xl text-muted-foreground font-light mb-8 max-w-lg">
-            "God's blessings"
+          <p className="text-xl md:text-2xl text-muted-foreground font-light mb-12 italic">
+            "God's blessings" or "Blessing from God" in translation from Yoruba to English.
           </p>
 
-          <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-xl">
+          <div className="space-y-6 text-lg md:text-xl text-foreground/80 leading-relaxed font-sans max-w-3xl mx-auto text-left md:text-center">
             <p>
-              Technologist with <span className="text-foreground font-medium">6+ years</span> of experience. 
-              Founder, product guy, venture scout.
+              I am a technologist with over six years of rollercoaster ride as a founder, product guy, and venture scout. My secret sauce? A killer work ethic, unwavering commitment, and an insatiable hunger for success.
             </p>
-            <p className="italic text-foreground/80">
-               Secret sauce? Killer work ethic & insatiable hunger.
+            <p>
+              I have carved my path and left a mark in some of the most competitive spaces, leaving behind a trail of products, ideas, and transformations that push boundaries.
             </p>
-            <p className="text-sm uppercase tracking-widest opacity-70 pt-2">
-              🇳🇬 Nigerian by birth • 🇬🇧 UK resident by choice
+            <p>
+              When I am not knee-deep in startups, building products, or leading digital transformation, you will find me globetrotting, catching z's, debating politics, or geeking out over podcasts, movies, music, sports, and food. I am also that guy who loves dropping dumb, mind-bending ideas (disguised as pushing the boundaries of innovation, of course) into casual conversation.
+            </p>
+            <p className="font-medium text-foreground">
+              Nigerian by birth, UK resident by choice – that's me in a nutshell.
             </p>
           </div>
 
-          <div className="flex gap-4 mt-8">
-             <Button className="rounded-full px-8">
-                Contact Me
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-12">
+             <Button className="rounded-full px-8 h-12 text-md shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-1">
+                Get in Touch
              </Button>
-             <div className="flex gap-2">
-                <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
+             <div className="flex gap-4">
+                <a href="#" className="p-3 rounded-full bg-secondary/50 hover:bg-primary/10 hover:text-primary transition-colors">
                     <Twitter className="w-5 h-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
+                </a>
+                <a href="#" className="p-3 rounded-full bg-secondary/50 hover:bg-primary/10 hover:text-primary transition-colors">
                     <Linkedin className="w-5 h-5" />
-                </Button>
+                </a>
+                <a href="#" className="p-3 rounded-full bg-secondary/50 hover:bg-primary/10 hover:text-primary transition-colors">
+                    <Mail className="w-5 h-5" />
+                </a>
              </div>
-          </div>
-        </motion.div>
-
-        {/* Image/Visual - Simplified */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center lg:justify-end"
-        >
-          <div className="relative w-64 h-64 md:w-96 md:h-96">
-            <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl transform translate-x-4 translate-y-4" />
-            <img
-              src={avatarImage}
-              alt="Ibukunoluwa"
-              className="relative w-full h-full object-cover rounded-full shadow-2xl border-4 border-background"
-            />
           </div>
         </motion.div>
       </div>

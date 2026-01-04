@@ -27,16 +27,20 @@ export default function Hero() {
             </div>
 
             {/* Name/Headline */}
-            <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter mb-8 leading-[0.9]">
+            <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter mb-4 leading-[0.9]">
               Ibukun<span className="text-primary">.</span>
             </h1>
+
+            <p className="text-lg md:text-xl text-muted-foreground font-light mb-8 italic">
+                "God's blessings" or “Blessing from God” in translation from Yoruba to English.
+            </p>
             
             {/* Concise Bio */}
             <div className="space-y-6 text-xl md:text-3xl font-light leading-tight max-w-2xl text-foreground/90">
               <p>
-                Technologist, Founder, and Venture Scout with <span className="font-semibold text-foreground">6+ years</span> of driving innovation.
+                Technologist, Founder, and Product Manager with <span className="font-semibold text-foreground">6+ years</span> of driving innovation.
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-lg md:text-2xl">
                 Building products, scaling startups, and pushing boundaries with insatiable hunger.
               </p>
             </div>

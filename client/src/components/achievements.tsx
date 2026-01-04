@@ -21,9 +21,6 @@ export default function AchievementsAndInterests() {
               <Trophy className="w-8 h-8" />
             </div>
             <h2 className="text-4xl font-display font-bold mb-4">Honors & Awards</h2>
-            <p className="text-muted-foreground max-w-2xl">
-              Recognized for contributions to the tech ecosystem and entrepreneurship across Africa and the UK.
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

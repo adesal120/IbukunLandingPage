@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { press, speaking } from "@/lib/data";
-import { Card, CardContent } from "@/components/ui/card";
-import { Mic, Newspaper, ExternalLink, Calendar } from "lucide-react";
+import { Mic, Newspaper, ExternalLink, Calendar, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function PressAndSpeaking() {
@@ -12,8 +11,8 @@ export default function PressAndSpeaking() {
       
       <div className="container px-6 relative z-10">
         
-        {/* Speaking Engagements Section (Full Width, Redesigned) */}
-        <div className="mb-24">
+        {/* Speaking Engagements Section */}
+        <div className="mb-32">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +55,7 @@ export default function PressAndSpeaking() {
             </div>
         </div>
 
-        {/* Press Mentions (Grid) */}
+        {/* Press Mentions (Redesigned as Clean List) */}
         <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -70,34 +69,47 @@ export default function PressAndSpeaking() {
                 <h2 className="text-3xl font-display font-bold">Press & Media</h2>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {press.map((item, index) => (
-                <motion.a
-                href={item.url}
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="group block"
-                >
-                <Card className="h-full bg-card hover:bg-card/80 border-border/40 hover:border-primary/30 transition-all duration-300">
-                    <CardContent className="p-5 flex flex-col h-full justify-between">
-                    <div>
-                        <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
-                        {item.publisher}
-                        </p>
-                        <h3 className="text-sm font-medium leading-relaxed group-hover:text-primary transition-colors line-clamp-2">
-                        {item.title}
-                        </h3>
-                    </div>
-                    <div className="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
-                        <ExternalLink className="w-4 h-4 text-muted-foreground" />
-                    </div>
-                    </CardContent>
-                </Card>
-                </motion.a>
-            ))}
+            <div className="max-w-5xl mx-auto">
+                <div className="grid gap-4">
+                    {press.map((item, index) => (
+                        <motion.a
+                            href={item.url}
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.03 }}
+                            className="group relative flex items-center gap-6 p-6 bg-card hover:bg-card/50 border border-border/40 rounded-xl hover:border-primary/30 hover:shadow-md transition-all duration-300"
+                        >
+                            {/* Publisher Badge */}
+                            <div className="hidden sm:flex w-32 shrink-0 items-center justify-center">
+                                <span className="text-xs font-bold text-primary/70 uppercase tracking-wider group-hover:text-primary transition-colors text-center">
+                                    {item.publisher}
+                                </span>
+                            </div>
+
+                            {/* Divider */}
+                            <div className="hidden sm:block w-px h-8 bg-border/60 group-hover:bg-primary/20 transition-colors" />
+
+                            {/* Content */}
+                            <div className="flex-1 min-w-0">
+                                <div className="flex sm:hidden mb-2">
+                                    <span className="text-[10px] font-bold text-primary/70 uppercase tracking-wider border border-primary/20 px-2 py-0.5 rounded-full">
+                                        {item.publisher}
+                                    </span>
+                                </div>
+                                <h3 className="text-lg font-medium leading-snug group-hover:text-primary transition-colors truncate pr-4">
+                                    {item.title}
+                                </h3>
+                            </div>
+
+                            {/* Action Icon */}
+                            <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0">
+                                <ArrowRight className="w-4 h-4" />
+                            </div>
+                        </motion.a>
+                    ))}
+                </div>
             </div>
         </div>
 

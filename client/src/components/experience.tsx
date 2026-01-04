@@ -1,20 +1,28 @@
 import { motion } from "framer-motion";
 import { experience } from "@/lib/data";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Briefcase, ArrowUpRight } from "lucide-react";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-secondary/30">
-      <div className="container px-6">
+    <section id="experience" className="py-24 relative overflow-hidden">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-secondary/20 pointer-events-none" />
+
+      <div className="container px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
         >
-          <h2 className="text-4xl font-display font-bold mb-4">Work Experience</h2>
-          <div className="h-1 w-20 bg-primary" />
+          <div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight">Work Experience</h2>
+            <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-primary/30 rounded-full" />
+          </div>
+          <p className="text-muted-foreground max-w-md text-right hidden md:block">
+            A track record of building, scaling, and leading across diverse sectors.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -25,16 +33,25 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
+              className="group"
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-border/50 bg-card/50 backdrop-blur-sm">
+              <Card className="h-full bg-card/40 backdrop-blur-md border-border/40 hover:border-primary/50 hover:bg-card/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
                 <CardHeader>
-                  <CardTitle className="font-display text-xl">{job.company}</CardTitle>
-                  <CardDescription className="text-primary font-medium mt-1">
+                  <div className="flex justify-between items-start">
+                    <div className="p-2 bg-primary/5 rounded-lg text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Briefcase className="w-5 h-5" />
+                    </div>
+                    <ArrowUpRight className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
+                  </div>
+                  <CardTitle className="font-display text-xl leading-tight group-hover:text-primary transition-colors">
+                    {job.company}
+                  </CardTitle>
+                  <CardDescription className="text-foreground/80 font-medium mt-1">
                     {job.role}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all">
                     {job.description}
                   </p>
                 </CardContent>

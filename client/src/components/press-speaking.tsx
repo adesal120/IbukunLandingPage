@@ -17,12 +17,13 @@ export default function PressAndSpeaking() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-3 mb-12"
+              className="flex flex-col items-start mb-12"
             >
-                <div className="p-3 bg-primary/10 rounded-xl text-primary">
-                  <Mic className="w-6 h-6" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-4 border border-primary/20">
+                  <Mic className="w-3.5 h-3.5" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Events</span>
                 </div>
-                <h2 className="text-3xl font-display font-bold">Speaking Engagements</h2>
+                <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight">Speaking Engagements</h2>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -55,18 +56,19 @@ export default function PressAndSpeaking() {
             </div>
         </div>
 
-        {/* Press Mentions (Redesigned as Clean List) */}
+        {/* Press Mentions */}
         <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-3 mb-12"
+              className="flex flex-col items-start mb-12"
             >
-                <div className="p-3 bg-primary/10 rounded-xl text-primary">
-                  <Newspaper className="w-6 h-6" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-4 border border-primary/20">
+                  <Newspaper className="w-3.5 h-3.5" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Media</span>
                 </div>
-                <h2 className="text-3xl font-display font-bold">Press & Media</h2>
+                <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight">Press & Media</h2>
             </motion.div>
 
             <div className="max-w-5xl mx-auto">

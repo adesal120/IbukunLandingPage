@@ -16,11 +16,14 @@ export default function Experience() {
           viewport={{ once: true }}
           className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
         >
-          <div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight">Work Experience</h2>
-            <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-primary/30 rounded-full" />
+          <div className="flex flex-col items-start">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-4 border border-primary/20">
+              <Briefcase className="w-3.5 h-3.5" />
+              <span className="text-xs font-bold uppercase tracking-wider">Career</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight">Work Experience</h2>
           </div>
-          <p className="text-muted-foreground max-w-md text-right hidden md:block">
+          <p className="text-muted-foreground max-w-md text-right hidden md:block pb-2">
             A track record of building, scaling, and leading across diverse sectors.
           </p>
         </motion.div>

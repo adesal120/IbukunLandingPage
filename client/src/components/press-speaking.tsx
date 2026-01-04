@@ -35,22 +35,24 @@ export default function PressAndSpeaking() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="group h-full p-6 bg-card border border-border/50 rounded-2xl hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 flex flex-col justify-between">
-                        <div>
-                            <Badge variant="secondary" className="mb-4 bg-primary/5 text-primary hover:bg-primary/10 border-primary/10">
-                                <Calendar className="w-3 h-3 mr-1.5" /> Event
-                            </Badge>
-                            <h3 className="text-lg font-bold font-display leading-tight group-hover:text-primary transition-colors">
-                                {event}
-                            </h3>
-                        </div>
-                        <div className="mt-6 pt-6 border-t border-border/50 flex justify-between items-center">
-                            <span className="text-sm text-muted-foreground font-medium">Speaker</span>
-                            <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-                                <Mic className="w-4 h-4" />
+                    <a href={event.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                        <div className="group h-full p-6 bg-card border border-border/50 rounded-2xl hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <Badge variant="secondary" className="mb-4 bg-primary/5 text-primary hover:bg-primary/10 border-primary/10">
+                                    <Calendar className="w-3 h-3 mr-1.5" /> Event
+                                </Badge>
+                                <h3 className="text-lg font-bold font-display leading-tight group-hover:text-primary transition-colors">
+                                    {event.title}
+                                </h3>
+                            </div>
+                            <div className="mt-6 pt-6 border-t border-border/50 flex justify-between items-center">
+                                <span className="text-sm text-muted-foreground font-medium">Speaker</span>
+                                <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <ArrowRight className="w-4 h-4" />
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                   </motion.div>
                 ))}
             </div>
@@ -77,6 +79,7 @@ export default function PressAndSpeaking() {
                         <motion.a
                             href={item.url}
                             key={index}
+                            target="_blank" rel="noopener noreferrer"
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}

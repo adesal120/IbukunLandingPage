@@ -38,27 +38,29 @@ export default function Experience() {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <Card className="h-full bg-card/40 backdrop-blur-md border-border/40 hover:border-primary/50 hover:bg-card/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div className="p-2 bg-primary/5 rounded-lg text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Briefcase className="w-5 h-5" />
+              <a href={job.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                <Card className="h-full bg-card/40 backdrop-blur-md border-border/40 hover:border-primary/50 hover:bg-card/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <div className="p-2 bg-primary/5 rounded-lg text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
+                        <Briefcase className="w-5 h-5" />
+                      </div>
+                      <ArrowUpRight className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
                     </div>
-                    <ArrowUpRight className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
-                  </div>
-                  <CardTitle className="font-display text-xl leading-tight group-hover:text-primary transition-colors">
-                    {job.company}
-                  </CardTitle>
-                  <CardDescription className="text-foreground/80 font-medium mt-1">
-                    {job.role}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all">
-                    {job.description}
-                  </p>
-                </CardContent>
-              </Card>
+                    <CardTitle className="font-display text-xl leading-tight group-hover:text-primary transition-colors">
+                      {job.company}
+                    </CardTitle>
+                    <CardDescription className="text-foreground/80 font-medium mt-1">
+                      {job.role}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all">
+                      {job.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </a>
             </motion.div>
           ))}
         </div>

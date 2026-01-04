@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import heroBg from "@assets/generated_images/vibrant_abstract_gradient_mesh_background.png";
 import { Twitter, Linkedin, Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { contact } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -54,18 +55,20 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-6 items-center mt-12">
-               <Button className="h-14 px-8 text-lg rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300">
-                  Let's Connect <ArrowRight className="ml-2 w-5 h-5" />
-               </Button>
+               <a href={`mailto:${contact.email}`}>
+                    <Button className="h-14 px-8 text-lg rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300">
+                        Let's Connect <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+               </a>
                
                <div className="flex gap-2">
-                  <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                  <a href={contact.twitter} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
                       <Twitter className="w-5 h-5" />
                   </a>
-                  <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                  <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
                       <Linkedin className="w-5 h-5" />
                   </a>
-                  <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                  <a href={`mailto:${contact.email}`} className="w-12 h-12 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
                       <Mail className="w-5 h-5" />
                   </a>
                </div>

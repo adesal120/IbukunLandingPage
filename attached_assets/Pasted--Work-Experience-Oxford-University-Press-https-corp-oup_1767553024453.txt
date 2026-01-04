@@ -1,0 +1,130 @@
+## Work Experience
+
+- [**Oxford University Press:**](https://corp.oup.com/) Product Manager
+Oxford University Press (OUP) is the world's largest university press, publishing 6k titles annually, achieving over 110m global unit sales and £796m in turnover (FY 2024/25). A significant focus of my role is managing digital platforms that modernise processes at the intersection of publishing and technology, reshaping how over 600k content and metadata are stored, managed, and distributed to over 200 global partners.
+- [TN Najia:](https://tnnaija.com/) Ops and Logistics Lead
+TN Naija is a non-profit community of over 650 Nigerian tech professionals, all holders of the UK Global Talent Visa. A significant focus of my volunteer role is executing end-to-end ops and logistics management for annual conferences (London 2024, Birmingham 2025), overseeing vendor sourcing (catering, audio-visual, venues, light, sound, etc.), and cross-team collaboration with content, marketing, partnership, etc., to deliver seamless experiences for attendees, speakers, and exhibitors.
+- [**Coremaker](https://coremaker.io/):** Product Owner
+    
+    Coremaker is a London-based software engineering studio that provides startups and SMEs with the best technology. A significant focus of my role was managing the development of digital products within the fintech/ledger, open-source, and investment-tech domains.
+    
+- [**GTVAdvice](https://gtvadvice.softr.app/):** Creator
+    
+    GTVAdvice is a digital repository offering both official and unofficial resources, including articles, videos, and forum threads, to assist individuals aspiring to apply for the UK Global Talent Visa in crafting a robust application.
+    
+- [**SHL Capital](https://shl.capital/):** VC Scout
+    
+    SHL Capital invests $15 million a year in pre-seed and seed-stage startups, usually in the form of $150k to $250k checks. Notable SHL Capital portfolio companies include ClubHouse, Lambda School, Notion, Figma, HelloSign, and many more.
+    
+- [**Quabbly](https://quabbly.com/):** Product Marketing
+    
+    ***Airtable and Zapier on one platform***.  Quabbly is an automation platform designed for businesses of all sizes in Africa. It lets you connect your favourite tools, create custom workflows, and automate repetitive tasks—all without writing a single line of code.
+    
+- [**Afriktrip](https://afriktrip.disha.page/):** Founder
+    
+    ***TripAdvisor for Africa**.* Afriktrip is an online marketplace where tourists can discover and book 7.5k tours, activities, and experiences offered by 1.5k verified local tour operators and guides across 28 African countries. Proudly backed by Daniel Gross (former YC Partner and Pioneer founder).
+    
+- [**AfroScanner](https://afroscanner.pory.app/):** Creator
+    
+    AfroScanner is a comprehensive, freely accessible online directory that serves as your complete guide to African travel. We provide essential information on visa requirements, entry criteria, health guidelines, and travel protocols, establishing ourselves as the definitive resource for travellers navigating Africa in the post-pandemic landscape.
+    
+- [**Tour Guide Africa Series](https://blog.afriktrip.com/category/tgafrica-series/):** Editor-In-Chief
+    
+    This blog series features interviews with the visionary founders of local tourism businesses who are playing a pivotal role in propelling Africa's tourism industry to new heights.
+    
+- [**StopTheSpread](https://stopthespread.info/):** Product Manager
+    
+    StopTheSpread is a web app providing reliable information for the public on COVID-19 in simple language, written by medical professionals. At its peak, it garnered 50k daily active users in the UK, USA, Australia, and New Zealand, serving as an educational resource for over 100 GP practices throughout the UK.
+    
+- [**First City Monument Bank](https://www.fcmb.com/):** Core Banking Application Support
+    
+    First City Monument Bank (FCMB) is a banking and financial institution HQ in Lagos, Nigeria, that provides market-proven solutions that drive digital transformation in the banking sector, with total assets valued at $5b. A significant part of my role was collaborating with the IT team and writing SQL for data integration, essential for the development of bespoke financial applications.
+    
+- [**Cralocs](https://www.producthunt.com/posts/cralocs):** Founder
+    
+    ***Airbnb for film locations**.* Cralocs is an online marketplace that connects filmmakers with unique real estate properties for shoots – think luxury homes, loft apartments, warehouses, cafes, offices, churches, and more. From Los Angeles to Atlanta, property owners list their spaces to earn extra income by hosting film productions. 
+    
+- [**BoxPlay](https://youtu.be/ZU6gJo4GjsM):** Founder
+    
+    ***Netflix, but for movie rentals.*** BoxPlay is a video-on-demand service that enables Nigerians to rent and watch cinema-released movies on their mobile devices. This was my first attempt at building a digital product or startup at age 18.
+    
+
+---
+
+## Significant Achievements
+
+- Cohort #2: [**AFRISE Challenge 2024](https://hindsightventures.co/flagship-programs/afrise-challenge-2024) –** top 30 startups, powered by Concordia University and Hindsight Ventures.
+- Middle East and Africa Regional Winner and Global Finalist: [**Global Startup Pitch Competition 2023**](https://witevents.com/globalstartuppitch/) – powered by Web in Travel and Phocuswright.
+- Cohort #4.0: [**Barclays Black Founder Accelerator**](https://www.foundervine.com/barclays-accelerator-cohort)
+- Finalist: [**Africa Youth in Tourism Innovation Challenge 2023**](https://www.linkedin.com/feed/update/urn:li:activity:7071127048592760832/)
+- City Winner and Regional Finalist: [**Tech Nation Rising Stars 5.0](https://technation.io/programmes/rising-stars/) –** the UK’s most exciting competition for early-stage startups.
+- Cohort #6: [**Envision Accelerator**](https://www.envisionaccelerator.com/)
+- Recipient: [**UK Global Talent Visa for Digital Technology**](https://technation.io/visa-tech-nation-visa-guide/)
+- BSc (Hons) Computer Science: [**Federal University of Agriculture Abeokuta**](https://unaab.edu.ng/)
+- Winner: [**Pioneer Tournament**](https://pioneer.app/winners/ibukunoluwa-salau) – a startup competition and accelerator founded by Daniel Gross, funded by Stripe and a16z.
+- Finalist: [**FTxSDG Challenge 2021**](https://fttalent.ft.com/ftxseedstars/) – powered by the Financial Times and Seedstars to empower impact-driven entrepreneurs in emerging markets.
+- Fellow: [**MZZ Africa**](https://mzzafrica.com/)
+- Fellow: [**RoundtripAfrika Fellowship**](https://medium.com/roundtrip-afrika/meet-our-inaugural-class-of-fellows-70e553377323)
+- Fellow: [**Jemi Product Management Fellowship**](https://jemi.so/fellowship)
+- General Member: [**Computer Professional of Nigeria**](https://www.cpn.gov.ng/metro/)
+- Alumni: [**Wimbart Africa PR Program**](https://wimbart.com/afriktrip-describes-wimbart-office-hours-as-educative-and-enlightening/)
+- Certified: [**Microsoft Azure AI Fundamentals**](https://www.credly.com/badges/782e0761-5279-4114-86d0-34789eedccf9/public_url)
+- Certified: [**Microsoft Azure Fundamentals**](https://www.credly.com/badges/782e0761-5279-4114-86d0-34789eedccf9/public_url)
+- Intercollegiate Silver Medalist, Handball: [**Federal University of Agriculture Abeokuta**](https://unaab.edu.ng/)
+- Intercollegiate Bronze Medalist, Volleyball: [**Federal University of Agriculture Abeokuta**](https://unaab.edu.ng/)
+- Member, 26th Student Representative Assembly: [**Federal University of Agriculture Abeokuta**](https://unaab.edu.ng/)
+
+---
+
+## Press Mentions
+
+- [**BenjaminDada:**](https://www.benjamindada.com/connect-ignite-nigerian-uk-tech-professionals/) Connect and Ignite: Celebrating Nigerian Tech Professionals in the UK.
+- [**Phocuswire](https://www.phocuswire.com/Hot-25-Travel-Startups-for-2024-Direx):** Presenting the Hot 25 Travel Startups for 2024.
+- [**Phocuswire](https://www.phocuswire.com/5-startups-advance-grand-finals-phocuswright-wit-global-startup-pitch):** 5 startups advance to grand finals in Phocuswright/WIT Global Pitch
+- [**VoyagesAfriq](https://voyagesafriq.com/2023/06/01/african-youth-highlight-innovative-travel-tourism-entrepreneurship-trends-at-aytis-2023/):** African youth highlight innovative travel, tourism entrepreneurship trends at AYTIS 2023
+- [**BusinessDay](https://businessday.ng/life-arts/article/aytis-unveils-innovative-travel-trends/):** AYTIS unveils innovative travel trends
+- [**Phocuswire](https://www.phocuswire.com/Meet-the-15-semifinalists-of-the-Global-Startup-Pitch):** Meet the 15 semifinalists of the Global Startup Pitch
+- [**VoyagesAfriq](https://voyagesafriq.com/2023/06/04/top-3-african-youth-entrepreneurs-emerge-as-aytis-ends/):** Top 3 African youth entrepreneurs emerge as AYTIS ends
+- [**Web In Travel](https://www.webintravel.com/meet-the-25-pitching-at-round-1-of-global-startup-pitch/):** Meet the 25 pitching at Round 1 of Global Startup Pitch
+- [**BusinessDay](https://businessday.ng/life-arts/article/south-african-airways-partners-africa-youth-in-tourism-innovation-summit/):** South African Airways Partners Africa Youth In Tourism Innovation Summit
+- [**Tech Nation](https://technation.io/12-days-of-scaleups/):** Meet our Rising Stars 5.0 Midlands City winners
+- [**Disrupt Africa](https://disrupt-africa.com/2021/01/15/nigerian-startup-afriktrip-launches-online-travel-marketplace/):** Nigerian startup Afriktrip launches an online travel marketplace
+- [**BenjaminDada](https://www.benjamindada.com/afriktrip-africa-tour-book-now-pay-later/):** Afriktrip launches an online marketplace for African tours with a book now, pay later feature
+- [**Pioneer](https://pioneer.app/blog/meet-the-pioneers-january-2021/):** Meet the Pioneers: January 2021
+- [**Forward Thinking Founders Podcast](https://www.listennotes.com/podcasts/forward-thinking/501-ibukunoluwa-salau-86S4kXFoIcJ/):** Ibukunoluwa Salau (Afriktrip) On Booking Trips to Africa
+- [**BenjaminDada](https://www.benjamindada.com/global-accelerators-nigerian-startups/amp/):** 15 global startup accelerators accepting Nigerian startups.
+- [**Wimbart](https://wimbart.com/afriktrip-describes-wimbart-office-hours-as-educative-and-enlightening/):** Afriktrip describes Wimbart's office hours as ‘educative and enlightening'
+- [**Startup.info](https://startup.info/ibukunoluwa-salau-afriktrip/):** Afriktrip: Building the Future of Travel in Africa
+- [**TechBuild Africa](https://techbuild.africa/startup-afriktrip-africa-world-tourism-technology/?amp):** Nigerian startup Afriktrip is connecting Africa to the world through tourism and technology
+- [**ProductHunt](https://www.producthunt.com/posts/cralocs):** The Top #5 Product of the Day
+
+---
+
+## Speaking Engagements
+
+- Speaker: [**Africa Youth in Tourism Innovation Summit 2024**](https://youthtourismsummit.com/2024-speakers/)
+- Speaker: [**Web in Travel Singapore 2023**](https://www.youtube.com/watch?v=T53r9Ca-qM0)
+- Speaker: [**Africa Youth in Tourism Innovation Summit 2023**](https://youthtourismsummit.com/2023-speakers/)
+- Speaker: [**Founderfest Day 2021**](https://www.foundervine.com/#)
+- Speaker: [**Web in Travel Africa 2021**](https://www.witevents.com/)
+
+---
+
+## Contact
+
+<aside>
+<img src="/icons/sharing_gray.svg" alt="/icons/sharing_gray.svg" width="40px" />
+
+[**Email**](mailto:ibukunoluwasalau4@gmail.com)
+
+</aside>
+
+<aside>
+<img src="/icons/sharing_gray.svg" alt="/icons/sharing_gray.svg" width="40px" /> [**LinkedIn**](https://www.linkedin.com/in/ibukunoluwa-salau-28864bb7/)
+
+</aside>
+
+<aside>
+<img src="/icons/following_gray.svg" alt="/icons/following_gray.svg" width="40px" /> [**Twitter**](https://x.com/mr_adesal)
+
+</aside>

@@ -1,5 +1,6 @@
 import { Mail, Linkedin, Twitter, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { contact } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -15,15 +16,21 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-4">
-            <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hover:text-white rounded-full">
-              <Twitter className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hover:text-white rounded-full">
-              <Linkedin className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hover:text-white rounded-full">
-              <Mail className="w-5 h-5" />
-            </Button>
+            <a href={contact.twitter} target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hover:text-white rounded-full">
+                <Twitter className="w-5 h-5" />
+                </Button>
+            </a>
+            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hover:text-white rounded-full">
+                <Linkedin className="w-5 h-5" />
+                </Button>
+            </a>
+            <a href={`mailto:${contact.email}`}>
+                <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hover:text-white rounded-full">
+                <Mail className="w-5 h-5" />
+                </Button>
+            </a>
           </div>
 
         </div>

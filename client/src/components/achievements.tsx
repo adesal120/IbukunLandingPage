@@ -1,47 +1,46 @@
 import { motion } from "framer-motion";
 import { achievements, interests } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Award, Heart, Sparkles, Star } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Trophy, Award, Heart, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function AchievementsAndInterests() {
   return (
     <section id="achievements" className="py-24 bg-secondary/10">
       <div className="container px-6">
         
-        {/* Achievements Section */}
-        <div className="mb-24">
+        {/* Achievements Section - Redesigned */}
+        <div className="mb-32">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center text-center mb-16"
+            className="flex flex-col items-start text-left mb-12"
           >
-            <div className="p-3 bg-primary/10 rounded-full text-primary mb-4">
-              <Trophy className="w-8 h-8" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-4">
+              <Trophy className="w-4 h-4" />
+              <span className="text-xs font-bold uppercase tracking-wider">Recognition</span>
             </div>
-            <h2 className="text-4xl font-display font-bold mb-4">Honors & Awards</h2>
+            <h2 className="text-4xl font-display font-bold">Honors & Awards</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-8">
             {achievements.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
+                className="flex gap-4 items-start group"
               >
-                <Card className="h-full border-border/50 hover:border-primary/50 transition-colors group">
-                  <CardContent className="p-6 flex gap-4 items-start">
-                    <div className="mt-1">
-                      <Award className="w-5 h-5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                    <p className="text-sm font-medium leading-relaxed group-hover:text-primary transition-colors">
-                      {item}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                </div>
+                <div className="pt-0.5 border-b border-border/50 pb-6 w-full group-hover:border-primary/30 transition-colors">
+                  <p className="text-base md:text-lg font-medium leading-snug text-foreground/90 group-hover:text-primary transition-colors">
+                    {item}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>

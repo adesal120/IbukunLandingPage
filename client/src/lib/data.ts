@@ -92,3 +92,109 @@ export const interests = [
   "Food",
   "Dropping dumb, mind-bending ideas",
 ];
+
+export const press = [
+  {
+    publisher: "BenjaminDada",
+    title: "Connect and Ignite: Celebrating Nigerian Tech Professionals in the UK",
+    url: "#"
+  },
+  {
+    publisher: "Phocuswire",
+    title: "Presenting the Hot 25 Travel Startups for 2024",
+    url: "#"
+  },
+  {
+    publisher: "Phocuswire",
+    title: "5 startups advance to grand finals in Phocuswright/WIT Global Pitch",
+    url: "#"
+  },
+  {
+    publisher: "VoyagesAfriq",
+    title: "African youth highlight innovative travel, tourism entrepreneurship trends at AYTIS 2023",
+    url: "#"
+  },
+  {
+    publisher: "BusinessDay",
+    title: "AYTIS unveils innovative travel trends",
+    url: "#"
+  },
+  {
+    publisher: "Phocuswire",
+    title: "Meet the 15 semifinalists of the Global Startup Pitch",
+    url: "#"
+  },
+  {
+    publisher: "VoyagesAfriq",
+    title: "Top 3 African youth entrepreneurs emerge as AYTIS ends",
+    url: "#"
+  },
+  {
+    publisher: "Web In Travel",
+    title: "Meet the 25 pitching at Round 1 of Global Startup Pitch",
+    url: "#"
+  },
+  {
+    publisher: "BusinessDay",
+    title: "South African Airways Partners Africa Youth In Tourism Innovation Summit",
+    url: "#"
+  },
+  {
+    publisher: "Tech Nation",
+    title: "Meet our Rising Stars 5.0 Midlands City winners",
+    url: "#"
+  },
+  {
+    publisher: "Disrupt Africa",
+    title: "Nigerian startup Afriktrip launches an online travel marketplace",
+    url: "#"
+  },
+  {
+    publisher: "BenjaminDada",
+    title: "Afriktrip launches an online marketplace for African tours with a book now, pay later feature",
+    url: "#"
+  },
+  {
+    publisher: "Pioneer",
+    title: "Meet the Pioneers: January 2021",
+    url: "#"
+  },
+  {
+    publisher: "Forward Thinking Founders Podcast",
+    title: "Ibukunoluwa Salau (Afriktrip) On Booking Trips to Africa",
+    url: "#"
+  },
+  {
+    publisher: "BenjaminDada",
+    title: "15 global startup accelerators accepting Nigerian startups",
+    url: "#"
+  },
+  {
+    publisher: "Wimbart",
+    title: "Afriktrip describes Wimbart's office hours as ‘educative and enlightening'",
+    url: "#"
+  },
+  {
+    publisher: "Startup.info",
+    title: "Afriktrip: Building the Future of Travel in Africa",
+    url: "#"
+  },
+  {
+    publisher: "TechBuild Africa",
+    title: "Nigerian startup Afriktrip is connecting Africa to the world through tourism and technology",
+    url: "#"
+  },
+  {
+    publisher: "ProductHunt",
+    title: "The Top #5 Product of the Day",
+    url: "#"
+  }
+];
+
+export const speaking = [
+  "Africa Youth in Tourism Innovation Summit 2024",
+  "Web in Travel Singapore 2023",
+  "Africa Youth in Tourism Innovation Summit 2023",
+  "Founderfest Day 2021",
+  "Web in Travel Africa 2021"
+];

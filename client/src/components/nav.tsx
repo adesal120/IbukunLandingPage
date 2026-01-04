@@ -9,9 +9,9 @@ export default function Nav() {
 
   const links = [
     { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
+    { name: "Work", href: "#experience" },
     { name: "Speaking", href: "#press" },
-    { name: "Achievements", href: "#achievements" },
+    { name: "Awards", href: "#achievements" },
   ];
 
   return (

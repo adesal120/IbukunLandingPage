@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { achievements, interests } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Award, Heart, Sparkles, CheckCircle2, Star } from "lucide-react";
+import { Trophy, Award, Heart, Sparkles, CheckCircle2, Star, ExternalLink } from "lucide-react";
 
 export default function AchievementsAndInterests() {
   return (
@@ -33,25 +33,30 @@ export default function AchievementsAndInterests() {
                 transition={{ delay: index * 0.05 }}
                 className="group relative"
               >
-                <div className="h-full bg-background border border-border/60 p-6 rounded-2xl hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col items-start gap-4">
-                  {/* Decorative Number */}
-                  <span className="text-4xl font-display font-black text-border/40 group-hover:text-primary/20 transition-colors">
-                    {(index + 1).toString().padStart(2, '0')}
-                  </span>
-                  
-                  {/* Content */}
-                  <div className="relative">
-                    <p className="font-medium text-lg leading-snug group-hover:text-primary transition-colors">
-                      {item}
-                    </p>
-                    <div className="absolute -left-6 top-1 w-1 h-0 bg-primary group-hover:h-full transition-all duration-300" />
-                  </div>
+                <a href={item.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                    <div className="h-full bg-background border border-border/60 p-6 rounded-2xl hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col items-start gap-4">
+                    {/* Decorative Number */}
+                    <div className="flex justify-between w-full items-start">
+                        <span className="text-4xl font-display font-black text-border/40 group-hover:text-primary/20 transition-colors">
+                            {(index + 1).toString().padStart(2, '0')}
+                        </span>
+                        <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative">
+                        <p className="font-medium text-lg leading-snug group-hover:text-primary transition-colors">
+                        {item.title}
+                        </p>
+                        <div className="absolute -left-6 top-1 w-1 h-0 bg-primary group-hover:h-full transition-all duration-300" />
+                    </div>
 
-                  {/* Icon */}
-                  <div className="mt-auto pt-4 w-full flex justify-end">
-                     <Star className="w-5 h-5 text-muted-foreground/30 group-hover:text-primary group-hover:fill-current transition-all" />
-                  </div>
-                </div>
+                    {/* Icon */}
+                    <div className="mt-auto pt-4 w-full flex justify-end">
+                        <Star className="w-5 h-5 text-muted-foreground/30 group-hover:text-primary group-hover:fill-current transition-all" />
+                    </div>
+                    </div>
+                </a>
               </motion.div>
             ))}
           </div>

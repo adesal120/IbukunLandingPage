@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { contact } from "@/lib/data";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +35,11 @@ export default function Nav() {
               {link.name}
             </a>
           ))}
-          <Button size="sm" className="rounded-full px-6">
-            Get in touch
-          </Button>
+          <a href={`mailto:${contact.email}`}>
+            <Button size="sm" className="rounded-full px-6">
+              Get in touch
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -67,7 +70,9 @@ export default function Nav() {
               {link.name}
             </a>
           ))}
-          <Button className="w-full mt-4">Get in touch</Button>
+          <a href={`mailto:${contact.email}`} className="w-full">
+            <Button className="w-full mt-4">Get in touch</Button>
+          </a>
         </motion.div>
       )}
     </nav>

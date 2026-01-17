@@ -14,7 +14,7 @@ export default function Hero() {
          <div className="absolute left-0 bottom-0 w-[400px] h-[400px] bg-blue-500/10 blur-[100px] rounded-full -translate-x-1/3 translate-y-1/3" />
       </div>
 
-      <div className="container px-6 z-10">
+      <div className="container px-8 md:px-12 z-10">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

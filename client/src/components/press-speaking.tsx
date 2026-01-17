@@ -9,7 +9,7 @@ export default function PressAndSpeaking() {
       {/* Subtle background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       
-      <div className="container px-6 relative z-10">
+      <div className="container px-8 md:px-12 relative z-10">
         
         {/* Speaking Engagements Section */}
         <div className="mb-32">

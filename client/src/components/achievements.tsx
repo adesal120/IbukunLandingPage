@@ -6,7 +6,7 @@ import { Trophy, Award, Heart, Sparkles, CheckCircle2, Star, ExternalLink } from
 export default function AchievementsAndInterests() {
   return (
     <section id="achievements" className="py-24 bg-secondary/10">
-      <div className="container px-6">
+      <div className="container px-8 md:px-12">
         
         {/* Achievements Section - Redesigned v3 (Numbered/Editorial Style) */}
         <div className="mb-32">

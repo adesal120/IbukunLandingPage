@@ -16,7 +16,7 @@ export default function Nav() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="container mx-auto px-8 md:px-12 h-16 flex items-center justify-between">
         <Link href="/">
           <a className="text-xl font-display font-bold tracking-tighter hover:opacity-80 transition-opacity">
             IBUKUN

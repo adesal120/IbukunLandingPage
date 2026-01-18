@@ -103,7 +103,7 @@ export default function PressAndSpeaking() {
                                         {item.publisher}
                                     </span>
                                 </div>
-                                <h3 className="text-lg font-medium leading-snug group-hover:text-primary transition-colors truncate pr-4">
+                                <h3 className="text-lg font-medium leading-snug group-hover:text-primary transition-colors pr-4">
                                     {item.title}
                                 </h3>
                             </div>

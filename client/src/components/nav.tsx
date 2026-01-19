@@ -20,7 +20,7 @@ export default function Nav() {
       <div className="container mx-auto px-8 md:px-12 h-16 flex items-center justify-between">
         <Link href="/">
           <a className="text-xl font-display font-bold tracking-tighter hover:opacity-80 transition-opacity">
-            IBUKUN
+            IBUKUNOLUWA
           </a>
         </Link>
 

@@ -73,7 +73,7 @@ export default function PressAndSpeaking() {
                 <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight">Press & Media</h2>
             </motion.div>
 
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-5xl">
                 <div className="grid gap-4">
                     {press.map((item, index) => (
                         <motion.a

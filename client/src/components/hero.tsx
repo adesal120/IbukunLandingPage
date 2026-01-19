@@ -29,7 +29,7 @@ export default function Hero() {
 
             {/* Name/Headline */}
             <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter mb-4 leading-[0.9]">
-              Ibukun<span className="text-primary">.</span>
+              Ibukunoluwa<span className="text-primary">.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground font-light mb-8 italic">

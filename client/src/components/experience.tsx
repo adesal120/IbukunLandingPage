@@ -24,7 +24,7 @@ export default function Experience() {
             <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight">Work Experience</h2>
           </div>
           <p className="text-muted-foreground max-w-md text-right hidden md:block pb-2">
-            A track record of building, scaling, and leading across diverse sectors.
+            A track record of building, scaling, and leading
           </p>
         </motion.div>
 

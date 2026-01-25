@@ -28,7 +28,7 @@ export default function Hero() {
             </div>
 
             {/* Name/Headline */}
-            <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter mb-4 leading-[0.9]">
+            <h1 className="text-5xl sm:text-6xl md:text-9xl font-display font-black tracking-tighter mb-4 leading-[0.9] break-words">
               Ibukunoluwa<span className="text-primary">.</span>
             </h1>
 

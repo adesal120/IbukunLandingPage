@@ -1,12 +1,18 @@
 export const experience = [
   {
+    company: "Panlit",
+    role: "Founder & Product",
+    description: "Panlit is an AI employee for reservation businesses that handles the work they’d otherwise need to hire a receptionist, salesperson, and web developer to do.",
+    url: "https://panlit.com"
+  },
+  {
     company: "Oxford University Press",
     role: "Product Manager",
     description: "Managing digital platforms that modernise processes at the intersection of publishing and technology, reshaping how over 600k content and metadata are stored, managed, and distributed to over 200 global partners. OUP is the world's largest university press with £796m in turnover.",
     url: "https://corp.oup.com/"
   },
   {
-    company: "TN Najia",
+    company: "TN Naija",
     role: "Ops and Logistics Lead",
     description: "Executing end-to-end ops and logistics management for annual conferences (London 2024, Birmingham 2025) for a community of over 650 Nigerian tech professionals holding the UK Global Talent Visa.",
     url: "https://tnnaija.com/"
@@ -220,7 +226,6 @@ export const speaking = [
 ];
 
 export const contact = {
-  email: "ibukunoluwasalau4@gmail.com",
-  linkedin: "https://www.linkedin.com/in/ibukunoluwa-salau-28864bb7/",
-  twitter: "https://x.com/mr_adesal"
+  email: "hello@ibukunsalau.com",
+  linkedin: "https://www.linkedin.com/in/ibukunoluwa-salau-28864bb7/"
 };

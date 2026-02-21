@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Twitter, Globe } from "lucide-react";
+import { Mail, Linkedin, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { contact } from "@/lib/data";
 
@@ -11,16 +11,11 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-display font-bold mb-2">Ibukunoluwa</h3>
             <p className="text-primary-foreground/60">
-              Technologist • Founder • Venture Scout
+              Founder • Product Leader • Community Builder
             </p>
           </div>
 
           <div className="flex gap-4">
-            <a href={contact.twitter} target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hover:text-white rounded-full">
-                <Twitter className="w-5 h-5" />
-                </Button>
-            </a>
             <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
                 <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hover:text-white rounded-full">
                 <Linkedin className="w-5 h-5" />

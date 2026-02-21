@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import heroBg from "@assets/generated_images/vibrant_abstract_gradient_mesh_background.png";
-import { Twitter, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { contact } from "@/lib/data";
 
@@ -39,7 +39,7 @@ export default function Hero() {
             {/* Concise Bio */}
             <div className="space-y-6 text-xl md:text-3xl font-light leading-tight max-w-2xl text-foreground/90">
               <p>
-                Founder, Product Manager, and Community Builder with <span className="font-semibold text-foreground">6+ years</span> of driving innovation.
+                Founder, Product Manager, and Community Builder with <span className="font-semibold text-foreground">10+ years</span> of driving innovation.
               </p>
               <p className="text-muted-foreground text-lg md:text-2xl">
                 Building products, scaling startups, and pushing boundaries with insatiable hunger.
@@ -62,9 +62,6 @@ export default function Hero() {
                </a>
                
                <div className="flex gap-2">
-                  <a href={contact.twitter} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-                      <Twitter className="w-5 h-5" />
-                  </a>
                   <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
                       <Linkedin className="w-5 h-5" />
                   </a>

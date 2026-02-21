@@ -1,0 +1,55 @@
+Here's the full final table:
+
+| **Company** | **Tag** | **Link** | **Description** |
+|---|---|---|---|
+| Panlit | Venture / Professional | https://panlit.com | Building an AI employee for reservation businesses — handling everything a receptionist, salesperson, and web developer would do, in one product. Designed for the operators who can't afford to hire three people but need all three jobs done. |
+| Oxford University Press | Professional | https://corp.oup.com/ | Managing digital platforms at the world's largest university press (£796m turnover), overseeing how 600k+ pieces of content and metadata are stored and distributed to 200+ global partners including Apple, Google, and Amazon. |
+| TN Naija | Community | https://tnnaija.com/ | Running end-to-end operations and logistics for one of the UK's most prominent Nigerian tech communities — bringing the annual conference to London in 2024 and Birmingham in 2025, connecting a growing network of tech professionals across two continents. |
+| Coremaker | Professional | https://coremaker.io/ | Shaped the product direction of a London-based software studio building across fintech, open-source, and investment technology — turning complex engineering into products people actually want to use. |
+| GTVAdvice | Community | https://gtvadvice.softr.app/ | Built the go-to resource for technologists navigating the UK Global Talent Visa — demystifying one of the UK's most competitive visa routes and making the process more accessible for those who qualify but don't know where to start. |
+| SHL Capital | Venture | https://shl.capital/ | Scouted early-stage deals for a VC deploying $15m/year at pre-seed and seed — with a portfolio that includes Clubhouse, Notion, Figma, and Lambda School before they became household names. |
+| Quabbly | Professional | https://getlatka.com/companies/quabbly-technologies-inc | Led product marketing for an African no-code automation platform, helping businesses across the continent build workflows and connect their tools without writing a single line of code. |
+| Afriktrip / Direx | Venture / Professional | https://www.youtube.com/@afriktrip5839/featured | Founded the 'TripAdvisor for Africa' — an online marketplace that grew to 7,500+ tours and activities across 28 countries, backed by Daniel Gross (former YC Partner). The venture evolved into Direx, a booking management system for tourism businesses, recognised as one of Phocuswire's Hot 25 Travel Startups for 2024 and a Middle East & Africa Regional Winner at the Global Startup Pitch Competition 2023. |
+| AfroScanner | Project | https://ibukunoluwasalau.medium.com/i-built-an-african-travel-advisory-tool-with-pory-in-4-days-c05e8c10f9d4 | Built a comprehensive travel intelligence directory for Africa — covering visa requirements, health guidelines, and entry rules across the continent, long before anyone else thought to. |
+| Tour Guide Africa Series | Community | https://blog.afriktrip.com/category/tgafrica-series/ | Ran a blog series spotlighting the founders quietly building Africa's tourism economy from the ground up — giving visibility to voices that rarely make the global travel press. |
+| StopTheSpread | Project | https://www.linkedin.com/company/stopthespread-info | Contributed as one of the product managers on a volunteer-led COVID-19 information platform founded by student doctors, programmers, and scientists from Cambridge University — peaking at 50,000 daily active users across the UK, US, Australia, and New Zealand, and adopted by 100+ GP practices in the UK. |
+| Andela Learning Community | Community | https://www.andela.com/andela-learning# | Mentored a cohort of graduates through the ALC x Microsoft 4Afrika Skillslab — a partnership between Andela Learning Community and Microsoft designed to equip the next generation of technologists with cloud computing skills and high-value employment credentials. |
+| First City Monument Bank | Professional | https://www.fcmb.com/ | Started where most product people don't — in the engine room. Wrote production SQL and worked directly with IT teams on data integration for bespoke financial applications at a bank managing $5bn in assets. |
+| Cralocs | Venture | https://www.producthunt.com/posts/cralocs | Built 'Airbnb for film locations' — a marketplace connecting filmmakers with unique real estate properties for shoots, and landed in the Top 5 Products of the Day on Product Hunt. |
+| BoxPlay | Venture | https://youtu.be/ZU6gJo4GjsM | At 18, built 'Netflix for movie rentals' — a video-on-demand platform letting Nigerians rent cinema-released films before streaming was ubiquitous in Africa. The first of many bets on the continent's digital future. |
+
+---
+
+And here's the full prompt to give to your AI:
+
+---
+
+*I need you to update the Experience section of my personal website with the following changes:*
+
+*1. Rename the section title from "Work Experience" to "Experience"*
+
+*2. Add a tag system to each role. Tags should appear as small, subtle pill labels — either a light outline or soft background colour — positioned next to or just below the role title. They should be visually understated so they don't compete with the content. The available tags are: **Professional**, **Venture**, **Community**, and **Project**. Where a role has two tags, display both pills side by side.*
+
+*3. Each role should link out to the URL provided below when clicked.*
+
+*4. Replace all existing role descriptions with the updated ones below.*
+
+*5. Add Panlit at the top of the list as my current venture, and maintain the existing order for all other roles.*
+
+Here are the roles with their tags, links, and descriptions:
+
+- **Panlit** — Venture, Professional — https://panlit.com — Building an AI employee for reservation businesses — handling everything a receptionist, salesperson, and web developer would do, in one product. Designed for the operators who can't afford to hire three people but need all three jobs done.
+- **Oxford University Press** — Professional — https://corp.oup.com/ — Managing digital platforms at the world's largest university press (£796m turnover), overseeing how 600k+ pieces of content and metadata are stored and distributed to 200+ global partners including Apple, Google, and Amazon.
+- **TN Naija** — Community — https://tnnaija.com/ — Running end-to-end operations and logistics for one of the UK's most prominent Nigerian tech communities — bringing the annual conference to London in 2024 and Birmingham in 2025, connecting a growing network of tech professionals across two continents.
+- **Coremaker** — Professional — https://coremaker.io/ — Shaped the product direction of a London-based software studio building across fintech, open-source, and investment technology — turning complex engineering into products people actually want to use.
+- **GTVAdvice** — Community — https://gtvadvice.softr.app/ — Built the go-to resource for technologists navigating the UK Global Talent Visa — demystifying one of the UK's most competitive visa routes and making the process more accessible for those who qualify but don't know where to start.
+- **SHL Capital** — Venture — https://shl.capital/ — Scouted early-stage deals for a VC deploying $15m/year at pre-seed and seed — with a portfolio that includes Clubhouse, Notion, Figma, and Lambda School before they became household names.
+- **Quabbly** — Professional — https://getlatka.com/companies/quabbly-technologies-inc — Led product marketing for an African no-code automation platform, helping businesses across the continent build workflows and connect their tools without writing a single line of code.
+- **Afriktrip / Direx** — Venture, Professional — https://www.youtube.com/@afriktrip5839/featured — Founded the 'TripAdvisor for Africa' — an online marketplace that grew to 7,500+ tours and activities across 28 countries, backed by Daniel Gross (former YC Partner). The venture evolved into Direx, a booking management system for tourism businesses, recognised as one of Phocuswire's Hot 25 Travel Startups for 2024 and a Middle East & Africa Regional Winner at the Global Startup Pitch Competition 2023.
+- **AfroScanner** — Project — https://ibukunoluwasalau.medium.com/i-built-an-african-travel-advisory-tool-with-pory-in-4-days-c05e8c10f9d4 — Built a comprehensive travel intelligence directory for Africa — covering visa requirements, health guidelines, and entry rules across the continent, long before anyone else thought to.
+- **Tour Guide Africa Series** — Community — https://blog.afriktrip.com/category/tgafrica-series/ — Ran a blog series spotlighting the founders quietly building Africa's tourism economy from the ground up — giving visibility to voices that rarely make the global travel press.
+- **StopTheSpread** — Project — https://www.linkedin.com/company/stopthespread-info — Contributed as one of the product managers on a volunteer-led COVID-19 information platform founded by student doctors, programmers, and scientists from Cambridge University — peaking at 50,000 daily active users across the UK, US, Australia, and New Zealand, and adopted by 100+ GP practices in the UK.
+- **Andela Learning Community** — Community — https://www.andela.com/andela-learning# — Mentored a cohort of graduates through the ALC x Microsoft 4Afrika Skillslab — a partnership between Andela Learning Community and Microsoft designed to equip the next generation of technologists with cloud computing skills and high-value employment credentials.
+- **First City Monument Bank** — Professional — https://www.fcmb.com/ — Started where most product people don't — in the engine room. Wrote production SQL and worked directly with IT teams on data integration for bespoke financial applications at a bank managing $5bn in assets.
+- **Cralocs** — Venture — https://www.producthunt.com/posts/cralocs — Built 'Airbnb for film locations' — a marketplace connecting filmmakers with unique real estate properties for shoots, and landed in the Top 5 Products of the Day on Product Hunt.
+- **BoxPlay** — Venture — https://youtu.be/ZU6gJo4GjsM — At 18, built 'Netflix for movie rentals' — a video-on-demand platform letting Nigerians rent cinema-released films before streaming was ubiquitous in Africa. The first of many bets on the continent's digital future.

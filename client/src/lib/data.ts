@@ -2,87 +2,108 @@ export const experience = [
   {
     company: "Panlit",
     role: "Creator",
-    description: "Panlit is an AI employee for reservation businesses that handles the work they’d otherwise need to hire a receptionist, salesperson, and web developer to do.",
+    tags: ["Venture", "Professional"],
+    description: "Building an AI employee for reservation businesses — handling everything a receptionist, salesperson, and web developer would do, in one product. Designed for the operators who can't afford to hire three people but need all three jobs done.",
     url: "https://panlit.com"
   },
   {
     company: "Oxford University Press",
     role: "Product Manager",
-    description: "Managing digital platforms that modernise processes at the intersection of publishing and technology, reshaping how over 600k content and metadata are stored, managed, and distributed to over 200 global partners. OUP is the world's largest university press with £796m in turnover.",
+    tags: ["Professional"],
+    description: "Managing digital platforms at the world's largest university press (£796m turnover), overseeing how 600k+ pieces of content and metadata are stored and distributed to 200+ global partners including Apple, Google, and Amazon.",
     url: "https://corp.oup.com/"
   },
   {
     company: "TN Naija",
     role: "Ops and Logistics Lead",
-    description: "Executing end-to-end ops and logistics management for annual conferences (London 2024, Birmingham 2025) for a community of over 650 Nigerian tech professionals holding the UK Global Talent Visa.",
+    tags: ["Community"],
+    description: "Running end-to-end operations and logistics for one of the UK's most prominent Nigerian tech communities — bringing the annual conference to London in 2024 and Birmingham in 2025, connecting a growing network of tech professionals across two continents.",
     url: "https://tnnaija.com/"
   },
   {
     company: "Coremaker",
     role: "Product Owner",
-    description: "Managed the development of digital products within the fintech/ledger, open-source, and investment-tech domains for a London-based software engineering studio.",
+    tags: ["Professional"],
+    description: "Shaped the product direction of a London-based software studio building across fintech, open-source, and investment technology — turning complex engineering into products people actually want to use.",
     url: "https://coremaker.io/"
   },
   {
     company: "GTVAdvice",
     role: "Creator",
-    description: "Created a digital repository offering resources to assist individuals aspiring to apply for the UK Global Talent Visa.",
+    tags: ["Community"],
+    description: "Built the go-to resource for technologists navigating the UK Global Talent Visa — demystifying one of the UK's most competitive visa routes and making the process more accessible for those who qualify but don't know where to start.",
     url: "https://gtvadvice.softr.app/"
   },
   {
     company: "SHL Capital",
     role: "VC Scout",
-    description: "Scouting for a VC firm investing $15m/year in pre-seed and seed-stage startups. Portfolio includes ClubHouse, Lambda School, Notion, Figma, etc.",
+    tags: ["Venture"],
+    description: "Scouted early-stage deals for a VC deploying $15m/year at pre-seed and seed — with a portfolio that includes Clubhouse, Notion, Figma, and Lambda School before they became household names.",
     url: "https://shl.capital/"
   },
   {
     company: "Quabbly",
     role: "Product Marketing",
-    description: "Product marketing for an automation platform designed for businesses in Africa, connecting tools and creating workflows without code.",
-    url: "https://quabbly.com/"
+    tags: ["Professional"],
+    description: "Led product marketing for an African no-code automation platform, helping businesses across the continent build workflows and connect their tools without writing a single line of code.",
+    url: "https://getlatka.com/companies/quabbly-technologies-inc"
   },
   {
-    company: "Afriktrip",
+    company: "Afriktrip / Direx",
     role: "Founder",
-    description: "Built the 'TripAdvisor for Africa'. Online marketplace for 7.5k tours and activities across 28 African countries. Backed by Daniel Gross (former YC Partner).",
-    url: "https://afriktrip.disha.page/"
+    tags: ["Venture", "Professional"],
+    description: "Founded the 'TripAdvisor for Africa' — an online marketplace that grew to 7,500+ tours and activities across 28 countries, backed by Daniel Gross (former YC Partner). The venture evolved into Direx, a booking management system for tourism businesses, recognised as one of Phocuswire's Hot 25 Travel Startups for 2024 and a Middle East & Africa Regional Winner at the Global Startup Pitch.",
+    url: "https://www.youtube.com/@afriktrip5839/featured"
   },
   {
     company: "AfroScanner",
     role: "Creator",
-    description: "Comprehensive online directory serving as a complete guide to African travel, providing visa requirements and health guidelines.",
-    url: "https://afroscanner.pory.app/"
+    tags: ["Project"],
+    description: "Built a comprehensive travel intelligence directory for Africa — covering visa requirements, health guidelines, and entry rules across the continent, long before anyone else thought to.",
+    url: "https://ibukunoluwasalau.medium.com/i-built-an-african-travel-advisory-tool-with-pory-in-4-days-c05e8c10f9d4"
   },
   {
     company: "Tour Guide Africa Series",
     role: "Editor-In-Chief",
-    description: "Blog series interviewing visionary founders of local tourism businesses in Africa.",
+    tags: ["Community"],
+    description: "Ran a blog series spotlighting the founders quietly building Africa's tourism economy from the ground up — giving visibility to voices that rarely make the global travel press.",
     url: "https://blog.afriktrip.com/category/tgafrica-series/"
   },
   {
     company: "StopTheSpread",
     role: "Product Manager",
-    description: "Web app providing reliable COVID-19 information. Peaked at 50k DAU in UK, USA, Australia, NZ. Used by 100+ GP practices in UK.",
-    url: "https://stopthespread.info/"
+    tags: ["Project"],
+    description: "Contributed as one of the product managers on a volunteer-led COVID-19 information platform founded by student doctors, programmers, and scientists from Cambridge University — peaking at 50,000 daily active users across the UK, US, Australia, and New Zealand, and adopted by 100+ GP practices in the UK.",
+    url: "https://www.linkedin.com/company/stopthespread-info"
+  },
+  {
+    company: "Andela Learning Community",
+    role: "Mentor",
+    tags: ["Community"],
+    description: "Mentored a cohort of graduates through the ALC x Microsoft 4Afrika Skillslab — a partnership between Andela Learning Community and Microsoft designed to equip the next generation of technologists with cloud computing skills and high-value employment credentials.",
+    url: "https://www.andela.com/andela-learning#"
   },
   {
     company: "First City Monument Bank",
     role: "Core Banking Application Support",
-    description: "Collaborated with IT team and wrote SQL for data integration for bespoke financial applications at a bank with $5b assets.",
+    tags: ["Professional"],
+    description: "Started where most product people don't — in the engine room. Wrote production SQL and worked directly with IT teams on data integration for bespoke financial applications at a bank managing $5bn in assets.",
     url: "https://www.fcmb.com/"
   },
   {
     company: "Cralocs",
     role: "Founder",
-    description: "'Airbnb for film locations'. Marketplace connecting filmmakers with unique real estate properties for shoots.",
+    tags: ["Venture"],
+    description: "Built 'Airbnb for film locations' — a marketplace connecting filmmakers with unique real estate properties for shoots, and landed in the Top 5 Products of the Day on Product Hunt.",
     url: "https://www.producthunt.com/posts/cralocs"
   },
   {
     company: "BoxPlay",
     role: "Founder",
-    description: "'Netflix for movie rentals'. Video-on-demand service for Nigerians to rent cinema-released movies. First startup attempt at age 18.",
+    tags: ["Venture"],
+    description: "At 18, built 'Netflix for movie rentals' — a video-on-demand platform letting Nigerians rent cinema-released films before streaming was ubiquitous in Africa. The first of many bets on the continent's digital future.",
     url: "https://youtu.be/ZU6gJo4GjsM"
-  },
+  }
 ];
 
 export const achievements = [

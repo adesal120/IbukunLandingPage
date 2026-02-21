@@ -21,7 +21,7 @@ export default function Experience() {
               <Briefcase className="w-3.5 h-3.5" />
               <span className="text-xs font-bold uppercase tracking-wider">Career</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight">Work Experience</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight">Experience</h2>
           </div>
           <p className="text-muted-foreground max-w-md text-right hidden md:block pb-2">
             A track record of building, scaling, and leading
@@ -47,8 +47,20 @@ export default function Experience() {
                       </div>
                       <ArrowUpRight className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
                     </div>
-                    <CardTitle className="font-display text-xl leading-tight group-hover:text-primary transition-colors">
+                    <CardTitle className="font-display text-xl leading-tight group-hover:text-primary transition-colors flex flex-col gap-2">
                       {job.company}
+                      {job.tags && job.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {job.tags.map((tag: string, i: number) => (
+                            <span 
+                              key={i} 
+                              className="inline-flex items-center rounded-full border border-border bg-secondary/50 px-2.5 py-0.5 text-xs font-semibold text-secondary-foreground transition-colors hover:bg-secondary/80 font-sans tracking-wide"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </CardTitle>
                     <CardDescription className="text-foreground/80 font-medium mt-1">
                       {job.role}

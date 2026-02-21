@@ -243,7 +243,7 @@ export const speaking = [
   { title: "Web in Travel Singapore 2023", url: "https://www.youtube.com/watch?v=T53r9Ca-qM0" },
   { title: "Africa Youth in Tourism Innovation Summit 2023", url: "https://youthtourismsummit.com/2023-speakers/" },
   { title: "Founderfest Day 2021", url: "https://www.foundervine.com/#" },
-  { title: "Web in Travel Africa 2021", url: "https://www.witevents.com/" }
+  { title: "Web in Travel Africa 2021", url: "https://www.youtube.com/watch?v=GYCaWWSxEsE" }
 ];
 
 export const contact = {

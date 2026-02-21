@@ -24,7 +24,7 @@ export const experience = [
     company: "Coremaker",
     role: "Product Owner",
     tags: ["Professional"],
-    description: "Shaped the product direction of a London-based software studio building across fintech, open-source, and investment technology — turning complex engineering into products people actually want to use.",
+    description: "Shaped the product direction of a London-based software consultancy building across fintech, open-source, and investment technology — turning complex engineering into products people actually want to use.",
     url: "https://coremaker.io/"
   },
   {

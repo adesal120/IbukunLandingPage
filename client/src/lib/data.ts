@@ -1,7 +1,7 @@
 export const experience = [
   {
     company: "Panlit",
-    role: "Founder & Product",
+    role: "Creator",
     description: "Panlit is an AI employee for reservation businesses that handles the work they’d otherwise need to hire a receptionist, salesperson, and web developer to do.",
     url: "https://panlit.com"
   },

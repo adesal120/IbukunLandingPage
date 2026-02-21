@@ -78,7 +78,7 @@ export const experience = [
   },
   {
     company: "Andela Learning Community",
-    role: "Mentor",
+    role: "Cloud Mentor",
     tags: ["Community"],
     description: "Mentored a cohort of graduates through the ALC x Microsoft 4Afrika Skillslab — a partnership between Andela Learning Community and Microsoft designed to equip the next generation of technologists with cloud computing skills and high-value employment credentials.",
     url: "https://www.andela.com/andela-learning#"

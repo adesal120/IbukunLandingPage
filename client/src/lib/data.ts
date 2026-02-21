@@ -115,15 +115,13 @@ export const achievements = [
   { title: "Cohort #6: Envision Accelerator", url: "https://www.envisionaccelerator.com/" },
   { title: "Recipient: UK Global Talent Visa for Digital Technology", url: "https://technation.io/visa-tech-nation-visa-guide/" },
   { title: "BSc (Hons) Computer Science: Federal University of Agriculture Abeokuta", url: "https://unaab.edu.ng/" },
-  { title: "Winner: Pioneer Tournament", url: "https://pioneer.app/winners/ibukunoluwa-salau" },
-  { title: "Finalist: FTxSDG Challenge 2021", url: "https://fttalent.ft.com/ftxseedstars/" },
-  { title: "Fellow: MZZ Africa", url: "https://mzzafrica.com/" },
+  { title: "Winner: Pioneer.app Tournament", url: "https://pioneer.app/winners/ibukunoluwa-salau" },
+  { title: "Finalist: Financial Times x Seedsters SDG Challenge 2021", url: "https://drive.google.com/file/d/11qmPCiSVUZSHPPGE4PwVFqh4Zje-A1cX/view?usp=sharing" },
   { title: "Fellow: RoundtripAfrika Fellowship", url: "https://medium.com/roundtrip-afrika/meet-our-inaugural-class-of-fellows-70e553377323" },
-  { title: "Fellow: Jemi Product Management Fellowship", url: "https://jemi.so/fellowship" },
   { title: "General Member: Computer Professional of Nigeria", url: "https://www.cpn.gov.ng/metro/" },
   { title: "Alumni: Wimbart Africa PR Program", url: "https://wimbart.com/afriktrip-describes-wimbart-office-hours-as-educative-and-enlightening/" },
   { title: "Certified: Microsoft Azure AI Fundamentals", url: "https://www.credly.com/badges/782e0761-5279-4114-86d0-34789eedccf9/public_url" },
-  { title: "Certified: Microsoft Azure Fundamentals", url: "https://www.credly.com/badges/782e0761-5279-4114-86d0-34789eedccf9/public_url" },
+  { title: "Certified: Microsoft Azure Fundamentals", url: "https://www.credly.com/badges/12eb46d0-96c6-4031-9468-79e8ca382a3a?source=linked_in_profile" },
   { title: "Intercollegiate Silver Medalist, Handball: Federal University of Agriculture Abeokuta", url: "https://unaab.edu.ng/" },
   { title: "Intercollegiate Bronze Medalist, Volleyball: Federal University of Agriculture Abeokuta", url: "https://unaab.edu.ng/" }
 ];

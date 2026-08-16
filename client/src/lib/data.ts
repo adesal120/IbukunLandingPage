@@ -2,8 +2,8 @@ export const experience = [
   {
     company: "Panlit",
     role: "Creator",
-    tags: ["Venture", "Professional"],
-    description: "Building an AI employee for reservation businesses — handling everything a receptionist, salesperson, and web developer would do, in one product. Designed for the operators who can't afford to hire three people but need all three jobs done.",
+    tags: ["Venture"],
+    description: "Panlit is an AI voice and messaging agent for hospitality businesses. It answers every inbound phone call and message across your web and social channels—instantly, in your brand’s voice.",
     url: "https://panlit.com"
   },
   {
@@ -17,7 +17,7 @@ export const experience = [
     company: "TN Naija",
     role: "Ops and Logistics Lead",
     tags: ["Community"],
-    description: "Running end-to-end operations and logistics for one of the UK's most prominent Nigerian tech communities — bringing the annual conference to London in 2024 and Birmingham in 2025, connecting a growing network of tech professionals across two continents.",
+    description: "Running end-to-end operations and logistics for one of the UK’s most prominent UK-Africa tech communities, taking its annual conference to London in 2024 and Birmingham in 2025 and 2026, connecting founders, tech professionals, innovators, creatives, and community leaders for a full day of conversations, networking, panels, and celebration.",
     url: "https://tnnaija.com/"
   },
   {
@@ -139,6 +139,16 @@ export const interests = [
 ];
 
 export const press = [
+  {
+    publisher: "BusinessDay",
+    title: "African founders in UK get new platform to pitch, raise capital, build partnerships",
+    url: "https://businessday.ng/technology/article/african-founders-in-uk-get-new-platform-to-pitch-raise-capital-build-partnerships/"
+  },
+  {
+    publisher: "TechEconomy",
+    title: "TN Naija Announces Connect & Ignite 2026 (CXI'26), a Landmark Convening for the UK–Africa Tech Corridor",
+    url: "https://techeconomy.ng/tn-naija-announces-connect-ignite-2026-cxi26-a-landmark-convening-for-the-ukafrica-tech-corridor"
+  },
   {
     publisher: "BenjaminDada",
     title: "Connect and Ignite: Celebrating Nigerian Tech Professionals in the UK",

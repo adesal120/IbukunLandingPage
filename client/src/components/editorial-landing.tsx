@@ -16,7 +16,7 @@ const ansden: WorkItem = {
   role: "Founder",
   tags: ["Venture"],
   description:
-    "Conversational AI triage for telecare alarm receiving centres. Sold as an operational efficiency tool, not as a machine that answers emergency calls. Entering the market through paid eight-week shadow evaluations on recorded call audio, priced deliberately below procurement thresholds.",
+    "Conversational AI triage for telecare alarm receiving centres. It absorbs false pendant activations, welfare calls and technical alerts, and escalates genuine emergencies to human operators with a structured handover, so control room staff spend their time on the calls that matter.",
   url: "https://ansden.com",
   period: "2026 — present",
   proof: ["1.8m UK telecare households affected by the Jan 2027 PSTN switch-off", "100+ housing associations and councils mapped as buyers"],
@@ -125,7 +125,7 @@ function buildWorkItem(company: string): WorkItem {
       company === "Afriktrip / Direx"
         ? "Built the booking marketplace for African tours and experiences, from zero to 7,500+ listed tours across 28 countries. Raised from Daniel Gross's Pioneer, shipped book-now-pay-later, and took it through Barclays Black Founder Accelerator and Envision."
         : company === "Panlit"
-          ? "Took an AI concierge for independent hospitality businesses from nothing to launch in twelve months, clearing Meta App Review and UK telecoms regulatory approval along the way. Live since May 2026."
+          ? "Took an AI concierge for independent hospitality businesses from nothing to launch in twelve months, clearing Meta App Review and UK telecoms regulatory approval along the way."
           : company === "Oxford University Press"
             ? "Own five enterprise content platforms at the world's largest university press, a £1m+ portfolio covering metadata, taxonomy, rights and permissions, and digital distribution. They govern how 600k+ pieces of content are described, classified, licensed and delivered to 200+ partners including Apple, Google, Amazon and Spotify."
             : company === "TN Naija"

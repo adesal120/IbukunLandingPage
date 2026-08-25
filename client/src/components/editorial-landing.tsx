@@ -16,10 +16,10 @@ const ansden: WorkItem = {
   role: "Founder",
   tags: ["Venture"],
   description:
-    "An AI triage layer for UK telecare alarm centres. It absorbs false pendant activations and welfare calls so human operators handle the real emergencies.",
+    "Conversational AI triage for telecare alarm receiving centres. Sold as an operational efficiency tool, not as a machine that answers emergency calls. Entering the market through paid eight-week shadow evaluations on recorded call audio, priced deliberately below procurement thresholds.",
   url: "https://ansden.com",
   period: "2026 — present",
-  proof: ["AI triage for UK telecare alarm centres", "Built for the January 2027 PSTN switch-off"],
+  proof: ["1.8m UK telecare households affected by the Jan 2027 PSTN switch-off", "100+ housing associations and councils mapped as buyers"],
 };
 
 const featuredCompanies = [
@@ -35,27 +35,38 @@ const featuredCompanies = [
 const workDetails: Record<string, { period: string; proof: string[] }> = {
   "Afriktrip / Direx": {
     period: "2020 — 2024",
-    proof: ["7,500+ tours across 28 countries", "Phocuswire Hot 25 Travel Startup, 2024"],
+    proof: [
+      "Phocuswire Hot 25 Travel Startups, 2024",
+      "Regional winner, Middle East & Africa, Global Startup Pitch 2023",
+      "Top 5, Africa Youth in Tourism Innovation Challenge 2023",
+      "Covered by Disrupt Africa, BenjaminDada, TechBuild",
+    ],
   },
   Panlit: {
     period: "2025 — present",
-    proof: ["AI voice and messaging agent for hospitality", "Live across five countries"],
+    proof: ["Live merchants across five countries on three continents"],
   },
   "Oxford University Press": {
     period: "2024 — present",
-    proof: ["600k+ pieces of content across 200+ partners", "£1m+ portfolio of enterprise platforms"],
+    proof: [
+      "Platforms: CoreSource, Scout, PoolParty, ELT PMD, ELT PDRS",
+      "Academic, Education and English Language Teaching across 10+ countries",
+    ],
   },
   "TN Naija": {
     period: "Community",
-    proof: ["Annual convenings in London and Birmingham", "UK–Africa founders and tech community"],
+    proof: ["3 editions organised, 2024 to 2026", "Covered by TechEconomy, BusinessDay, BenjaminDada"],
   },
   "SHL Capital": {
     period: "Venture",
-    proof: ["Pre-seed and seed stage, global mandate", "$15m deployed annually"],
+    proof: ["Pre-seed and seed stage, global mandate"],
   },
   GTVAdvice: {
     period: "Community",
-    proof: ["UK Global Talent Visa guidance", "Built from personal experience of the route"],
+    proof: [
+      "70% endorsement success rate among applicants who used the guidance",
+      "Endorsed on the Digital Technology route personally",
+    ],
   },
   Coremaker: {
     period: "Professional",
@@ -104,12 +115,38 @@ function buildWorkItem(company: string): WorkItem {
 
   return {
     ...item,
+    role:
+      company === "TN Naija"
+        ? "Ops & Logistics Lead"
+        : company === "Panlit"
+          ? "Founder"
+          : item.role,
+    description:
+      company === "Afriktrip / Direx"
+        ? "Built the booking marketplace for African tours and experiences, from zero to 7,500+ listed tours across 28 countries. Raised from Daniel Gross's Pioneer, shipped book-now-pay-later, and took it through Barclays Black Founder Accelerator and Envision."
+        : company === "Panlit"
+          ? "Took an AI concierge for independent hospitality businesses from nothing to launch in twelve months, clearing Meta App Review and UK telecoms regulatory approval along the way. Live since May 2026."
+          : company === "Oxford University Press"
+            ? "Own five enterprise content platforms at the world's largest university press, a £1m+ portfolio covering metadata, taxonomy, rights and permissions, and digital distribution. They govern how 600k+ pieces of content are described, classified, licensed and delivered to 200+ partners including Apple, Google, Amazon and Spotify."
+            : company === "TN Naija"
+              ? "Run end-to-end operations for one of the UK's most prominent UK–Africa tech communities, including its annual convening. Organised three editions across London and Birmingham, bringing together 400+ founders, operators and investors across the corridor."
+              : company === "SHL Capital"
+                ? "Sourced pre-seed and seed deals for a fund deploying $15m a year, into a portfolio that includes Clubhouse, Notion and Figma."
+                : company === "GTVAdvice"
+                  ? "The reference resource for technologists applying for the UK Global Talent Visa, built after coming through the route myself. Demystifies eligibility, evidence and recommendation letters on one of the UK's most competitive immigration routes, for people who have no one to ask."
+                  : item.description,
     period: workDetails[company]?.period ?? item.tags?.join(" · ") ?? "Experience",
     proof: workDetails[company]?.proof ?? [],
   };
 }
 
-const featuredWork = featuredCompanies.map(buildWorkItem);
+const featuredWork = featuredCompanies.map((company) => {
+  const item = buildWorkItem(company);
+  return {
+    ...item,
+    tags: company === "Afriktrip / Direx" || company === "Panlit" || company === "Ansden" ? ["Venture"] : item.tags,
+  };
+});
 const additionalWork = experience
   .filter((item) => !featuredCompanies.includes(item.company))
   .map((item) => buildWorkItem(item.company));
@@ -143,9 +180,119 @@ const footnotes = [
   },
 ];
 
+const featuredRecognition = [
+  {
+    year: "2024",
+    title: "Hot 25 Travel Startups",
+    source: "Phocuswire, annual global selection",
+    url: press.find((item) => item.title.includes("Hot 25"))?.url ?? "https://www.phocuswire.com/Hot-25-Travel-Startups-for-2024-Direx",
+  },
+  {
+    year: "2023",
+    title: "MEA Winner, Global Traveltech Startup Pitch",
+    source: "Web in Travel",
+    url: achievements.find((item) => item.title.includes("Middle East and Africa"))?.url ?? "https://witevents.com/globalstartuppitch/",
+  },
+  {
+    year: "2023",
+    title: "City Winner and Regional Finalist, Rising Stars 5.0",
+    source: "Tech Nation, Midlands",
+    url: achievements.find((item) => item.title.includes("Tech Nation"))?.url ?? "https://technation.io/programmes/rising-stars/",
+  },
+  {
+    year: "2023",
+    title: "Barclays Black Founder Accelerator, Cohort 4.0",
+    source: "Selected cohort",
+    url: achievements.find((item) => item.title.includes("Barclays"))?.url ?? "https://www.foundervine.com/barclays-accelerator-cohort",
+  },
+  {
+    year: "2021",
+    title: "Winner, Pioneer.app Tournament",
+    source: "Global weekly founder tournament, backed by Daniel Gross",
+    url: achievements.find((item) => item.title.includes("Pioneer"))?.url ?? "https://pioneer.app/winners/ibukunoluwa-salau",
+  },
+  {
+    year: "2021",
+    title: "Global Talent, Digital Technology",
+    source: "UK Home Office endorsement for exceptional talent",
+    url: achievements.find((item) => item.title.includes("Global Talent"))?.url ?? "https://technation.io/visa-tech-nation-visa-guide/",
+  },
+  {
+    year: "2021",
+    title: "Finalist, Financial Times × Seedstars SDG Challenge",
+    source: "Global finalist",
+    url: achievements.find((item) => item.title.includes("Financial Times"))?.url ?? "https://drive.google.com/file/d/11qmPCiSVUZSHPPGE4PwVFqh4Zje-A1cX/view?usp=sharing",
+  },
+  {
+    year: "2024",
+    title: "AFRISE Challenge, Cohort #2",
+    source: "Top 30 startups",
+    url: achievements.find((item) => item.title.includes("AFRISE"))?.url ?? "https://hindsightventures.co/flagship-programs/afrise-challenge-2024",
+  },
+];
+
+const achievementYears: Array<[string, string]> = [
+  ["Envision", "2023"],
+  ["Africa Youth", "2023"],
+  ["Azure AI", "2021"],
+  ["Azure Fundamentals", "2021"],
+  ["BSc", "2018"],
+  ["Computer Professional", "2021"],
+  ["RoundtripAfrika", "2021"],
+  ["Wimbart", "2021"],
+  ["Handball", "2018"],
+  ["Volleyball", "2018"],
+];
+
 function yearFromTitle(title: string) {
-  return title.match(/20\d{2}/)?.[0] ?? "Selected";
+  return title.match(/20\d{2}/)?.[0] ?? achievementYears.find(([key]) => title.includes(key))?.[1] ?? "—";
 }
+
+const pressYears: Array<[string, string]> = [
+  ["tn-naija-announces-connect-ignite-2026", "2026"],
+  ["connect-ignite-nigerian-uk-tech-professionals", "2026"],
+  ["Hot-25-Travel-Startups-for-2024-Direx", "2024"],
+  ["african-founders-in-uk-get-new-platform", "2024"],
+  ["5-startups-advance-grand-finals", "2023"],
+  ["top-3-african-youth", "2023"],
+  ["12-days-of-scaleups", "2023"],
+  ["nigerian-startup-afriktrip-launches", "2021"],
+  ["501-ibukunoluwa-salau", "2021"],
+  ["meet-the-pioneers-january-2021", "2021"],
+  ["aytis-unveils", "2023"],
+  ["Meet-the-15-semifinalists", "2023"],
+  ["meet-the-25-pitching", "2023"],
+  ["south-african-airways-partners", "2023"],
+  ["afriktrip-africa-tour-book", "2021"],
+  ["global-accelerators-nigerian", "2021"],
+  ["wimbart-office-hours", "2021"],
+  ["ibukunoluwa-salau-afriktrip", "2021"],
+  ["startup-afriktrip-africa-world", "2021"],
+  ["cralocs", "2021"],
+];
+
+function pressYear(url: string) {
+  return pressYears.find(([key]) => url.includes(key))?.[1] ?? "—";
+}
+
+const selectedPressTitles = [
+  "TN Naija Announces Connect & Ignite",
+  "Connect and Ignite: Celebrating Nigerian Tech Professionals",
+  "Presenting the Hot 25",
+  "African founders in UK get new platform",
+  "5 startups advance to grand finals",
+  "Top 3 African youth entrepreneurs",
+  "Meet our Rising Stars 5.0",
+  "Nigerian startup Afriktrip launches an online travel marketplace",
+  "Ibukunoluwa Salau (Afriktrip) On Booking Trips to Africa",
+  "Meet the Pioneers: January 2021",
+];
+
+const selectedPress = selectedPressTitles
+  .map((title) => press.find((item) => item.title.includes(title)))
+  .filter((item): item is (typeof press)[number] => Boolean(item));
+
+const additionalPress = press.filter((item) => !selectedPress.some((selected) => selected.url === item.url));
 
 function ExternalLink({
   children,
@@ -272,7 +419,7 @@ export default function EditorialLanding() {
                 url: ansden.url,
               },
               {
-                role: "Creator · Live",
+                role: "Founder · Live",
                 company: "Panlit",
                 description: buildWorkItem("Panlit").description,
                 url: buildWorkItem("Panlit").url,
@@ -289,7 +436,7 @@ export default function EditorialLanding() {
 
         <section className="editorial-section" id="work">
           <SectionHeading title="Selected work" note={`${featuredWork.length} of ${experience.length + 1}`} />
-          <p className="section-lede">The things I&apos;d want judged. Each links through to the full account.</p>
+          <p className="section-lede">Seven things I&apos;d want judged. Each links through to the full account.</p>
           <div className="work-list">
             {featuredWork.map((item) => (
               <WorkRow key={item.company} item={item} />
@@ -311,17 +458,22 @@ export default function EditorialLanding() {
           <SectionHeading title="Recognition" note="Externally verified" />
           <p className="section-lede">Selected. Each was awarded by a panel I did not sit on.</p>
           <div className="awards-grid">
-            {achievements.slice(0, 8).map((item) => (
+            {featuredRecognition.map((item) => (
               <ExternalLink key={item.title} href={item.url} className="award-row">
-                <span className="award-year">{yearFromTitle(item.title)}</span>
-                <span className="award-title">{item.title}</span>
+                <span className="award-year">{item.year}</span>
+                <span>
+                  <span className="award-title">{item.title}</span>
+                  <span className="award-source">{item.source}</span>
+                </span>
               </ExternalLink>
             ))}
           </div>
           <details className="editorial-details">
             <summary>Show all {achievements.length} honours</summary>
             <div className="minimal-grid">
-              {achievements.slice(8).map((item) => (
+              {achievements
+                .filter((item) => !featuredRecognition.some((featured) => featured.url === item.url))
+                .map((item) => (
                 <ExternalLink key={item.title} href={item.url} className="minimal-link">
                   {item.title}<span>{yearFromTitle(item.title)}</span>
                 </ExternalLink>
@@ -331,23 +483,23 @@ export default function EditorialLanding() {
         </section>
 
         <section className="editorial-section" id="press">
-          <SectionHeading title="Press" note={`Selected · ${Math.min(10, press.length)} of ${press.length}`} />
+          <SectionHeading title="Press" note={`Selected · ${selectedPress.length} of ${press.length}`} />
           <p className="section-lede">Independent coverage of the work, most recent first.</p>
           <div className="press-list">
-            {press.slice(0, 10).map((item) => (
+            {selectedPress.map((item) => (
               <ExternalLink key={item.url} href={item.url} className="press-row">
                 <span className="press-publisher">{item.publisher}</span>
                 <span className="press-headline">{item.title}</span>
-                <span className="press-year">{yearFromTitle(item.title)}</span>
+                <span className="press-year">{pressYear(item.url)}</span>
               </ExternalLink>
             ))}
           </div>
           <details className="editorial-details">
             <summary>Show all {press.length} mentions</summary>
             <div className="minimal-grid">
-              {press.slice(10).map((item) => (
+              {additionalPress.map((item) => (
                 <ExternalLink key={item.url} href={item.url} className="minimal-link">
-                  {item.publisher}<span>{item.title}</span>
+                  {item.publisher}<span>{item.title} · {pressYear(item.url)}</span>
                 </ExternalLink>
               ))}
             </div>
@@ -410,7 +562,10 @@ function WorkRow({ item }: { item: WorkItem }) {
   return (
     <ExternalLink href={item.url} className="work-row">
       <div>
-        <div className="work-period">{item.period} · {item.tags?.join(" · ")}</div>
+        <div className="work-period">
+          {item.period}
+          {item.tags?.length && !item.period.includes(item.tags[0]) ? ` · ${item.tags.join(" · ")}` : ""}
+        </div>
         <h3>{item.company} <span className="work-tag">{item.role}</span></h3>
         <p className="work-description">{item.description}</p>
         <span className="row-arrow">Visit website →</span>

@@ -554,11 +554,19 @@ a {
 }
 
 .award-title {
+  display: block;
   font-family: var(--display);
   font-size: 1.02rem;
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.25;
+}
+
+.award-source {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .press-row {

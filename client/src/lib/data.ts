@@ -255,6 +255,6 @@ export const speaking = [
 ];
 
 export const contact = {
-  email: "hello@ibukunsalau.com",
+  email: "ibukun@ansden.com",
   linkedin: "https://www.linkedin.com/in/ibukunoluwa-salau-28864bb7/"
 };

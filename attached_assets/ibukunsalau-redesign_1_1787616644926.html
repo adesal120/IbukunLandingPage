@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ibukun Salau — Founder, Product Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12111A;
+  --paper:#ECEAF3;
+  --card:#F7F6FA;
+  --indigo:#4F3DEB;
+  --ochre:#C97E14;
+  --muted:#68657E;
+  --line:#D6D2E3;
+  --maxw:1080px;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:3px;border-radius:2px}
+
+/* ---------- utility type ---------- */
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+.rule{height:1px;background:var(--line);border:0}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;background:rgba(236,234,243,.82);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.mark{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.03em;text-decoration:none}
+.mark span{color:var(--indigo)}
+.navlinks{display:flex;gap:22px;align-items:center}
+.navlinks a{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;color:var(--muted);
+}
+.navlinks a:hover{color:var(--ink)}
+.navlinks a.kit{color:var(--indigo)}
+
+/* ---------- hero ---------- */
+header{padding:88px 0 0}
+.status{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:34px;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--indigo)}
+.claim{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(2.15rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.035em;
+  max-width:19ch;
+}
+.claim .q{color:var(--indigo)}
+.sup{
+  font-family:var(--mono);font-size:.3em;font-weight:500;vertical-align:super;
+  color:var(--ochre);text-decoration:none;margin-left:.12em;letter-spacing:0;
+}
+.sup:hover{color:var(--ink)}
+.cited{
+  border-bottom:2px solid var(--line);
+  transition:border-color .18s ease;
+}
+.cited.lit{border-bottom-color:var(--ochre)}
+
+.subclaim{
+  margin-top:30px;max-width:56ch;font-size:1.06rem;color:var(--muted);
+}
+.subclaim b{color:var(--ink);font-weight:500}
+
+/* footnote rail */
+.rail{
+  margin-top:44px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.rail a{
+  padding:16px 18px 16px 0;text-decoration:none;
+  display:flex;gap:10px;align-items:flex-start;
+  border-left:1px solid var(--line);padding-left:18px;
+  transition:background .18s ease;
+}
+.rail a:first-child{border-left:0;padding-left:0}
+.rail a:hover{background:rgba(201,126,20,.07)}
+.rail .n{font-family:var(--mono);font-size:11px;color:var(--ochre);padding-top:2px}
+.rail .t{font-size:13.5px;line-height:1.35}
+.rail .src{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);margin-top:5px}
+
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  padding:12px 20px;border-radius:999px;font-size:14.5px;font-weight:500;
+  border:1px solid var(--ink);transition:transform .16s ease,background .16s ease;
+}
+.btn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.primary:hover{background:var(--indigo);border-color:var(--indigo)}
+.btn.ghost:hover{background:rgba(18,17,26,.05)}
+.btn:active{transform:translateY(1px)}
+
+/* ---------- sections ---------- */
+section{padding:96px 0 0}
+.shead{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:8px}
+h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.03em;
+  font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.05;
+}
+.slede{color:var(--muted);font-size:15px;max-width:52ch;margin-top:12px}
+
+/* now band */
+.now{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:28px}
+.now a{background:var(--card);padding:24px;text-decoration:none;display:block;
+  transition:background .18s ease}
+.now a:hover{background:#fff}
+.now h3{font-family:var(--display);font-weight:600;font-size:1.12rem;letter-spacing:-.02em}
+.now .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--indigo);margin:0 0 10px}
+.now p{font-size:14px;color:var(--muted);margin-top:9px;line-height:1.45}
+
+/* work list */
+.work{margin-top:26px;border-top:1px solid var(--line)}
+.item{
+  display:grid;grid-template-columns:1fr 300px;gap:32px;
+  padding:30px 0;border-bottom:1px solid var(--line);
+  text-decoration:none;transition:padding-left .22s ease;
+}
+.item:hover{padding-left:12px}
+.item .yr{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.item h3{font-family:var(--display);font-weight:800;letter-spacing:-.028em;
+  font-size:clamp(1.35rem,3vw,1.95rem);line-height:1.1;margin:8px 0 0;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.tag{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--indigo);border:1px solid var(--indigo);border-radius:999px;
+  padding:3px 8px;font-weight:500;
+}
+.item .desc{margin-top:12px;font-size:15.5px;color:var(--muted);max-width:56ch}
+.item .desc b{color:var(--ink);font-weight:600}
+.proof{display:flex;flex-direction:column;gap:10px;padding-top:6px}
+.pf{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.35;color:var(--muted)}
+.pf .b{width:5px;height:5px;border-radius:50%;background:var(--ochre);margin-top:6px;flex:0 0 5px}
+.pf strong{color:var(--ink);font-weight:600}
+.arrow{font-family:var(--mono);color:var(--indigo);font-size:13px;margin-top:16px;display:inline-block}
+
+details{margin-top:26px}
+summary{
+  cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);list-style:none;
+  display:inline-flex;align-items:center;gap:8px;padding:9px 15px;
+  border:1px solid var(--line);border-radius:999px;background:var(--card);
+}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--ink);border-color:var(--muted)}
+.grid-min{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:20px}
+.grid-min a{background:var(--card);padding:16px 18px;text-decoration:none;font-size:14px;
+  transition:background .16s ease}
+.grid-min a:hover{background:#fff}
+.grid-min .role{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);margin-top:5px}
+
+/* recognition */
+.awards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:28px}
+.aw{background:var(--card);padding:22px 24px;display:flex;gap:16px;align-items:flex-start}
+.aw .yr{font-family:var(--mono);font-size:11px;color:var(--ochre);padding-top:4px;flex:0 0 44px}
+.aw h4{font-family:var(--display);font-weight:600;font-size:1.02rem;letter-spacing:-.015em;line-height:1.25}
+.aw p{font-size:13px;color:var(--muted);margin-top:5px}
+
+/* press */
+.press{margin-top:26px;border-top:1px solid var(--line)}
+.pr{display:flex;gap:24px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--line);
+  text-decoration:none;transition:padding-left .2s ease}
+.pr:hover{padding-left:10px}
+.pr .out{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--indigo);flex:0 0 150px}
+.pr .hl{font-size:15px;line-height:1.4}
+.pr .yr{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:auto;flex:0 0 auto}
+
+/* speaking */
+.talks{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:28px}
+.talks a{background:var(--card);padding:22px;text-decoration:none;transition:background .16s ease}
+.talks a:hover{background:#fff}
+.talks h4{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:-.015em;line-height:1.25;margin-top:8px}
+.talks .meta{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:9px}
+
+/* contact */
+.contact{background:var(--ink);color:var(--paper);border-radius:20px;padding:clamp(32px,6vw,60px);
+  margin-top:96px;display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:center}
+.contact h2{color:#fff;max-width:16ch}
+.contact p{color:#A9A5BE;margin-top:14px;max-width:44ch;font-size:15px}
+.contact .btn{border-color:rgba(255,255,255,.3);color:var(--paper)}
+.contact .btn.primary{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.contact .btn.ghost:hover{background:rgba(255,255,255,.1)}
+.kitlist{border-left:1px solid rgba(255,255,255,.16);padding-left:28px}
+.kitlist a{display:block;padding:10px 0;text-decoration:none;font-size:14px;color:#C9C6D9;
+  border-bottom:1px solid rgba(255,255,255,.1);transition:color .16s ease}
+.kitlist a:hover{color:#fff}
+.kitlist a:last-child{border-bottom:0}
+
+footer{margin-top:96px;padding:44px 0 60px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted)}
+footer .name{font-family:var(--display);font-weight:800;color:var(--ink);letter-spacing:-.02em}
+
+@media(max-width:860px){
+  .item{grid-template-columns:1fr;gap:18px}
+  .contact{grid-template-columns:1fr}
+  .kitlist{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-left:0;padding-top:8px}
+  .now,.talks,.grid-min,.awards{grid-template-columns:1fr}
+  .rail{grid-template-columns:repeat(2,1fr)}
+  .rail a:nth-child(odd){border-left:0;padding-left:0}
+  .navlinks a:not(.kit){display:none}
+  .pr{flex-wrap:wrap;gap:6px}
+  .pr .out{flex:0 0 100%}
+  .pr .yr{margin-left:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="mark" href="#top">IBUKUNOLUWA<span>.</span></a>
+    <div class="navlinks">
+      <a href="#now">Current</a>
+      <a href="#work">Work</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#press">Press</a>
+      <a href="#speaking" class="kit">Speaking</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+<header>
+  <div class="status"><span class="dot"></span> London, United Kingdom</div>
+
+  <h1 class="claim">
+    I build <span class="cited" data-fn="1">products for the markets<a href="#fn1" class="sup">1</a></span> everyone else finds <span class="q">too operational</span> to bother with<span class="cited" data-fn="2"><a href="#fn2" class="sup">2</a></span>.
+  </h1>
+
+  <p class="subclaim">
+    Product leader at <b>Oxford University Press</b>. Ten years building in markets most people
+    overlook, from African travel to UK telecare. Founder of <b>Afriktrip</b>, a traveltech
+    startup that scaled to <b>28 African countries</b>.
+  </p>
+
+  <div class="rail">
+    <a href="#" id="fn1" data-fn="1">
+      <span class="n">1</span>
+      <span class="t">MEA Winner, Global Traveltech Startup Pitch
+        <span class="src">Web in Travel · 2023</span></span>
+    </a>
+    <a href="#" id="fn2" data-fn="2">
+      <span class="n">2</span>
+      <span class="t">Winner, Pioneer Tournament
+        <span class="src">Pioneer.app · 2021</span></span>
+    </a>
+    <a href="#" id="fn3" data-fn="3">
+      <span class="n">3</span>
+      <span class="t">Rising Stars 5.0 City Winner
+        <span class="src">Tech Nation · 2023</span></span>
+    </a>
+    <a href="#" id="fn4" data-fn="4">
+      <span class="n">4</span>
+      <span class="t">Global Talent, Digital Technology
+        <span class="src">UK Home Office · 2021</span></span>
+    </a>
+  </div>
+
+  <div class="actions">
+    <a class="btn primary" href="#work">See selected work &nbsp;→</a>
+    <a class="btn ghost" href="mailto:ibukun@ansden.com">ibukun@ansden.com</a>
+  </div>
+</header>
+
+<!-- ================= NOW ================= -->
+<section id="now">
+  <div class="shead">
+    <h2>Current work</h2>
+    <span class="eyebrow">Updated Aug 2026</span>
+  </div>
+  <p class="slede">Where my time goes at the moment. Everything below this section is history.</p>
+
+  <div class="now">
+    <a href="#">
+      <p class="role">Product Manager</p>
+      <h3>Oxford University Press</h3>
+      <p>Five enterprise content platforms, a £1m+ portfolio, serving 200+ global partners including Apple, Google, Amazon and Spotify.</p>
+    </a>
+    <a href="https://ansden.com">
+      <p class="role">Founder · Pre-pilot</p>
+      <h3>Ansden</h3>
+      <p>An AI triage layer for UK telecare alarm centres. It absorbs false pendant activations and welfare calls so human operators handle the real emergencies. Racing the PSTN switch-off in January 2027 across 1.8m telecare households.</p>
+    </a>
+    <a href="#">
+      <p class="role">Founder · Live</p>
+      <h3>Panlit</h3>
+      <p>An AI concierge for independent hospitality businesses, so a missed call is no longer a lost booking. Merchants onboarded across five countries.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section id="work">
+  <div class="shead">
+    <h2>Selected work</h2>
+    <span class="eyebrow">7 of 16</span>
+  </div>
+  <p class="slede">Seven things I'd want judged. Each links through to the full account.</p>
+
+  <div class="work">
+
+    <a class="item" href="#">
+      <div>
+        <div class="yr">2020 — 2024 · Venture</div>
+        <h3>Afriktrip / Direx <span class="tag">Founder</span></h3>
+        <p class="desc">Built the booking marketplace for African tours and experiences, from zero to <b>7,500+ listed tours across 28 countries</b>. Raised from Daniel Gross's Pioneer, shipped book-now-pay-later, and took it through Barclays Black Founder Accelerator and Envision.</p>
+        <span class="arrow">Visit website →</span>
+      </div>
+      <div class="proof">
+        <div class="pf"><span class="b"></span><span><strong>Phocuswire Hot 25</strong> Travel Startups, 2024</span></div>
+        <div class="pf"><span class="b"></span><span><strong>Regional winner</strong>, Middle East &amp; Africa, Global Startup Pitch 2023</span></div>
+        <div class="pf"><span class="b"></span><span><strong>Top 5</strong>, Africa Youth in Tourism Innovation Challenge 2023</span></div>
+        <div class="pf"><span class="b"></span><span>Covered by <strong>Disrupt Africa, BenjaminDada, TechBuild</strong></span></div>
+      </div>
+    </a>
+
+    <a class="item" href="https://ansden.com">
+      <div>
+        <div class="yr">2026 — present · Venture</div>
+        <h3>Ansden <span class="tag">Founder</span></h3>
+        <p class="desc">Conversational AI triage for telecare alarm receiving centres. Sold as an operational efficiency tool, not as a machine that answers emergency calls. Entering the market through <b>paid eight-week shadow evaluations</b> on recorded call audio, priced deliberately below procurement thresholds.</p>
+        <span class="arrow">Visit website →</span>
+      </div>
+      <div class="proof">
+        <div class="pf"><span class="b"></span><span><strong>1.8m</strong> UK telecare households affected by the Jan 2027 PSTN switch-off</span></div>
+        <div class="pf"><span class="b"></span><span><strong>100+</strong> housing associations and councils mapped as buyers</span></div>
+      </div>
+    </a>
+
+    <a class="item" href="#">
+      <div>
+        <div class="yr">2025 — present · Venture</div>
+        <h3>Panlit <span class="tag">Founder</span></h3>
+        <p class="desc">Took an AI concierge for independent hospitality businesses from nothing to launch in twelve months, clearing <b>Meta App Review</b> and UK telecoms regulatory approval along the way. Live since <b>May 2026</b>.</p>
+        <span class="arrow">Visit website →</span>
+      </div>
+      <div class="proof">
+        <div class="pf"><span class="b"></span><span>Live merchants across <strong>five countries</strong> on three continents</span></div>
+      </div>
+    </a>
+
+    <a class="item" href="#">
+      <div>
+        <div class="yr">2024 — present · Professional</div>
+        <h3>Oxford University Press <span class="tag">Product Manager</span></h3>
+        <p class="desc">Own five enterprise content platforms at the world's largest university press, a <b>£1m+ portfolio</b> covering metadata, taxonomy, rights and permissions, and digital distribution. They govern how <b>600k+ pieces of content</b> are described, classified, licensed and delivered to <b>200+ partners</b> including Apple, Google, Amazon and Spotify.</p>
+        <span class="arrow">Visit website →</span>
+      </div>
+      <div class="proof">
+        <div class="pf"><span class="b"></span><span>Platforms: <strong>CoreSource, Scout, PoolParty, ELT PMD, ELT PDRS</strong></span></div>
+        <div class="pf"><span class="b"></span><span><strong>Academic, Education and English Language Teaching</strong> across 10+ countries</span></div>
+      </div>
+    </a>
+
+    <a class="item" href="#">
+      <div>
+        <div class="yr">Community</div>
+        <h3>TN Naija <span class="tag">Ops &amp; Logistics Lead</span></h3>
+        <p class="desc">Run end-to-end operations for one of the UK's most prominent UK–Africa tech communities, including its annual convening. Organised three editions across <b>London and Birmingham</b>, bringing together <b>400+ founders, operators and investors</b> across the corridor.</p>
+        <span class="arrow">Visit website →</span>
+      </div>
+      <div class="proof">
+        <div class="pf"><span class="b"></span><span><strong>3 editions</strong> organised, 2024 to 2026</span></div>
+        <div class="pf"><span class="b"></span><span>Covered by <strong>TechEconomy, BusinessDay, BenjaminDada</strong></span></div>
+      </div>
+    </a>
+
+    <a class="item" href="#">
+      <div>
+        <div class="yr">Venture</div>
+        <h3>SHL Capital <span class="tag">VC Scout</span></h3>
+        <p class="desc">Sourced pre-seed and seed deals for a fund deploying <b>$15m a year</b>, into a portfolio that includes Clubhouse, Notion and Figma.</p>
+        <span class="arrow">Visit website →</span>
+      </div>
+      <div class="proof">
+        <div class="pf"><span class="b"></span><span>Pre-seed and seed stage, global mandate</span></div>
+      </div>
+    </a>
+
+    <a class="item" href="#">
+      <div>
+        <div class="yr">Community</div>
+        <h3>GTVAdvice <span class="tag">Creator</span></h3>
+        <p class="desc">The reference resource for technologists applying for the UK Global Talent Visa, built after coming through the route myself. Demystifies eligibility, evidence and recommendation letters on one of the UK's most competitive immigration routes, for people who have no one to ask.</p>
+        <span class="arrow">Visit website →</span>
+      </div>
+      <div class="proof">
+        <div class="pf"><span class="b"></span><span><strong>70%</strong> endorsement success rate among applicants who used the guidance</span></div>
+        <div class="pf"><span class="b"></span><span>Endorsed on the <strong>Digital Technology</strong> route personally</span></div>
+      </div>
+    </a>
+
+  </div>
+
+  <details>
+    <summary>Show the full record · 9 more</summary>
+    <div class="grid-min">
+      <a href="#">Coremaker<span class="role">Product Owner</span></a>
+      <a href="#">Quabbly<span class="role">Product Marketing</span></a>
+      <a href="#">AfroScanner<span class="role">Creator</span></a>
+      <a href="#">Tour Guide Africa Series<span class="role">Editor-in-Chief</span></a>
+      <a href="#">StopTheSpread<span class="role">Product Manager</span></a>
+      <a href="#">Andela Learning Community<span class="role">Cloud Mentor</span></a>
+      <a href="#">First City Monument Bank<span class="role">Core Banking Support</span></a>
+      <a href="#">Cralocs<span class="role">Founder</span></a>
+      <a href="#">BoxPlay<span class="role">Founder</span></a>
+    </div>
+  </details>
+</section>
+
+<!-- ================= RECOGNITION ================= -->
+<section id="recognition">
+  <div class="shead">
+    <h2>Recognition</h2>
+    <span class="eyebrow">Externally verified</span>
+  </div>
+  <p class="slede">Selected. Each was awarded by a panel I did not sit on.</p>
+
+  <div class="awards">
+    <div class="aw">
+      <span class="yr">2024</span>
+      <div>
+        <h4>Hot 25 Travel Startups</h4>
+        <p>Phocuswire, annual global selection</p>
+      </div>
+    </div>
+    <div class="aw">
+      <span class="yr">2023</span>
+      <div>
+        <h4>MEA Winner, Global Traveltech Startup Pitch</h4>
+        <p>Web in Travel</p>
+      </div>
+    </div>
+    <div class="aw">
+      <span class="yr">2023</span>
+      <div>
+        <h4>City Winner and Regional Finalist, Rising Stars 5.0</h4>
+        <p>Tech Nation, Midlands</p>
+      </div>
+    </div>
+    <div class="aw">
+      <span class="yr">2023</span>
+      <div>
+        <h4>Barclays Black Founder Accelerator, Cohort 4.0</h4>
+        <p>Selected cohort</p>
+      </div>
+    </div>
+    <div class="aw">
+      <span class="yr">2021</span>
+      <div>
+        <h4>Winner, Pioneer.app Tournament</h4>
+        <p>Global weekly founder tournament, backed by Daniel Gross</p>
+      </div>
+    </div>
+    <div class="aw">
+      <span class="yr">2021</span>
+      <div>
+        <h4>Global Talent, Digital Technology</h4>
+        <p>UK Home Office endorsement for exceptional talent</p>
+      </div>
+    </div>
+    <div class="aw">
+      <span class="yr">2021</span>
+      <div>
+        <h4>Finalist, Financial Times × Seedstars SDG Challenge</h4>
+        <p>Global finalist</p>
+      </div>
+    </div>
+    <div class="aw">
+      <span class="yr">2024</span>
+      <div>
+        <h4>AFRISE Challenge, Cohort #2</h4>
+        <p>Top 30 startups</p>
+      </div>
+    </div>
+  </div>
+
+  <details>
+    <summary>Show all 14 honours</summary>
+    <div class="grid-min">
+      <a href="#">Envision Accelerator<span class="role">Cohort #6</span></a>
+      <a href="#">Africa Youth in Tourism Innovation Challenge 2023<span class="role">Top 5 finalist</span></a>
+      <a href="#">Microsoft Azure AI Fundamentals<span class="role">Certified</span></a>
+      <a href="#">Microsoft Azure Fundamentals<span class="role">Certified</span></a>
+      <a href="#">BSc (Hons) Computer Science<span class="role">Federal University of Agriculture, Abeokuta</span></a>
+      <a href="#">Computer Professionals of Nigeria<span class="role">General Member</span></a>
+    </div>
+  </details>
+</section>
+
+<!-- ================= PRESS ================= -->
+<section id="press">
+  <div class="shead">
+    <h2>Press</h2>
+    <span class="eyebrow">Selected · 10 of 20</span>
+  </div>
+  <p class="slede">Independent coverage of the work, most recent first.</p>
+
+  <div class="press">
+    <a class="pr" href="#"><span class="out">TechEconomy</span><span class="hl">TN Naija announces Connect &amp; Ignite 2026, a landmark convening for the UK–Africa tech corridor</span><span class="yr">2026</span></a>
+    <a class="pr" href="#"><span class="out">BenjaminDada</span><span class="hl">Connect and Ignite: Celebrating Nigerian tech professionals in the UK</span><span class="yr">2026</span></a>
+    <a class="pr" href="#"><span class="out">Phocuswire</span><span class="hl">Presenting the Hot 25 Travel Startups for 2024</span><span class="yr">2024</span></a>
+    <a class="pr" href="#"><span class="out">BusinessDay</span><span class="hl">African founders in UK get new platform to pitch, raise capital, build partnerships</span><span class="yr">2024</span></a>
+    <a class="pr" href="#"><span class="out">Phocuswire</span><span class="hl">Five startups advance to grand finals in Phocuswright/WIT Global Pitch</span><span class="yr">2023</span></a>
+    <a class="pr" href="#"><span class="out">VoyagesAfriq</span><span class="hl">Top 3 African youth entrepreneurs emerge as AYTIS ends</span><span class="yr">2023</span></a>
+    <a class="pr" href="#"><span class="out">Tech Nation</span><span class="hl">Meet our Rising Stars 5.0 Midlands City winners</span><span class="yr">2023</span></a>
+    <a class="pr" href="#"><span class="out">Disrupt Africa</span><span class="hl">Nigerian startup Afriktrip launches an online travel marketplace</span><span class="yr">2021</span></a>
+    <a class="pr" href="#"><span class="out">Forward Thinking Founders</span><span class="hl">Podcast: Ibukunoluwa Salau on booking trips to Africa</span><span class="yr">2021</span></a>
+    <a class="pr" href="#"><span class="out">Pioneer</span><span class="hl">Meet the Pioneers: January 2021</span><span class="yr">2021</span></a>
+  </div>
+
+  <details>
+    <summary>Show all 20 mentions</summary>
+    <div class="grid-min">
+      <a href="#">BusinessDay<span class="role">AYTIS unveils innovative travel trends</span></a>
+      <a href="#">Phocuswire<span class="role">Meet the 15 semifinalists of the Global Startup Pitch</span></a>
+      <a href="#">Web in Travel<span class="role">Meet the 25 pitching at Round 1 of Global Startup Pitch</span></a>
+      <a href="#">BusinessDay<span class="role">South African Airways partners AYTIS</span></a>
+      <a href="#">BenjaminDada<span class="role">Afriktrip launches book-now-pay-later marketplace</span></a>
+      <a href="#">Wimbart<span class="role">Afriktrip on Wimbart's office hours</span></a>
+      <a href="#">Startup.info<span class="role">Afriktrip: Building the future of travel in Africa</span></a>
+      <a href="#">TechBuild Africa<span class="role">Connecting Africa to the world through tourism and technology</span></a>
+      <a href="#">VoyagesAfriq<span class="role">African youth highlight innovative travel trends at AYTIS 2023</span></a>
+      <a href="#">Product Hunt<span class="role">Top #5 Product of the Day</span></a>
+    </div>
+  </details>
+</section>
+
+<!-- ================= SPEAKING ================= -->
+<section id="speaking">
+  <div class="shead">
+    <h2>Speaking</h2>
+    <span class="eyebrow">Available for 2026–27</span>
+  </div>
+  <p class="slede">On African travel infrastructure, AI in operational industries, and building across the UK–Africa corridor.</p>
+
+  <div class="talks">
+    <a href="#"><span class="eyebrow">Windhoek, Namibia</span><h4>Africa Youth in Tourism Innovation Summit</h4><p class="meta">Speaker · 2024</p></a>
+    <a href="#"><span class="eyebrow">Singapore</span><h4>Web in Travel</h4><p class="meta">Speaker · 2023</p></a>
+    <a href="#"><span class="eyebrow">Windhoek, Namibia</span><h4>Africa Youth in Tourism Innovation Summit</h4><p class="meta">Speaker · 2023</p></a>
+    <a href="#"><span class="eyebrow">South Africa</span><h4>Web in Travel Africa</h4><p class="meta">Speaker · 2021</p></a>
+    <a href="#"><span class="eyebrow">London, UK</span><h4>Founderfest Day</h4><p class="meta">Speaker · 2021</p></a>
+    <a href="#" style="display:flex;align-items:center"><h4 style="margin:0;color:var(--indigo)">Invite me to speak →</h4></a>
+  </div>
+</section>
+
+<footer>
+  <div><span class="name">Ibukunoluwa Salau</span> &nbsp;·&nbsp; London, United Kingdom &nbsp;·&nbsp; <a href="mailto:ibukun@ansden.com" style="color:var(--indigo);text-decoration:none">ibukun@ansden.com</a></div>
+  <div>Ibukunoluwa: "God's blessing", from Yoruba &nbsp;·&nbsp; © 2026</div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var cited = document.querySelectorAll('.cited');
+  cited.forEach(function(c){
+    var n = c.getAttribute('data-fn');
+    var target = document.querySelector('.rail a[data-fn="'+n+'"]');
+    if(!target) return;
+    function on(){ c.classList.add('lit'); target.style.background='rgba(201,126,20,.10)'; }
+    function off(){ c.classList.remove('lit'); target.style.background=''; }
+    c.addEventListener('mouseenter',on); c.addEventListener('mouseleave',off);
+    target.addEventListener('mouseenter',on); target.addEventListener('mouseleave',off);
+  });
+})();
+</script>
+</body>
+</html>

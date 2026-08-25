@@ -28,7 +28,6 @@ const featuredCompanies = [
   "Panlit",
   "Oxford University Press",
   "TN Naija",
-  "SHL Capital",
   "GTVAdvice",
 ];
 
@@ -151,35 +150,6 @@ const additionalWork = experience
   .filter((item) => !featuredCompanies.includes(item.company))
   .map((item) => buildWorkItem(item.company));
 
-const footnotes = [
-  {
-    number: "1",
-    title: "MEA Winner, Global Traveltech Startup Pitch",
-    source: "Web in Travel · 2023",
-    url:
-      achievements.find((item) => item.title.includes("Middle East and Africa"))?.url ??
-      "https://witevents.com/globalstartuppitch/",
-  },
-  {
-    number: "2",
-    title: "Winner, Pioneer.app Tournament",
-    source: "Pioneer.app · 2021",
-    url: achievements.find((item) => item.title.includes("Pioneer"))?.url ?? "https://pioneer.app/winners/ibukunoluwa-salau",
-  },
-  {
-    number: "3",
-    title: "Rising Stars 5.0 City Winner",
-    source: "Tech Nation · 2023",
-    url: achievements.find((item) => item.title.includes("Tech Nation"))?.url ?? "https://technation.io/programmes/rising-stars/",
-  },
-  {
-    number: "4",
-    title: "Global Talent, Digital Technology",
-    source: "UK Home Office · 2021",
-    url: achievements.find((item) => item.title.includes("Global Talent"))?.url ?? "https://technation.io/visa-tech-nation-visa-guide/",
-  },
-];
-
 const featuredRecognition = [
   {
     year: "2024",
@@ -298,15 +268,13 @@ function ExternalLink({
   children,
   href,
   className = "",
-  id,
 }: {
   children: React.ReactNode;
   href: string;
   className?: string;
-  id?: string;
 }) {
   return (
-    <a id={id} className={className} href={href} target="_blank" rel="noopener noreferrer">
+    <a className={className} href={href} target="_blank" rel="noopener noreferrer">
       {children}
     </a>
   );
@@ -314,11 +282,6 @@ function ExternalLink({
 
 export default function EditorialLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeFootnote, setActiveFootnote] = useState<string | null>(null);
-
-  const toggleFootnote = (number: string, active: boolean) => {
-    setActiveFootnote(active ? number : null);
-  };
 
   return (
     <div className="editorial-site" id="top">
@@ -349,51 +312,11 @@ export default function EditorialLanding() {
       <main className="editorial-wrap">
         <header className="editorial-hero">
           <div className="status"><span className="status-dot" /> London, United Kingdom</div>
-          <h1 className="claim">
-            I build{" "}
-            <span
-              className={`cited ${activeFootnote === "1" ? "lit" : ""}`}
-              onMouseEnter={() => toggleFootnote("1", true)}
-              onMouseLeave={() => toggleFootnote("1", false)}
-              onFocus={() => toggleFootnote("1", true)}
-              onBlur={() => toggleFootnote("1", false)}
-            >
-              products for the markets<a href="#fn1" className="sup">1</a>
-            </span>{" "}
-            everyone else finds <span className="claim-accent">too operational</span> to bother with
-            <span
-              className={`cited ${activeFootnote === "2" ? "lit" : ""}`}
-              onMouseEnter={() => toggleFootnote("2", true)}
-              onMouseLeave={() => toggleFootnote("2", false)}
-              onFocus={() => toggleFootnote("2", true)}
-              onBlur={() => toggleFootnote("2", false)}
-            >
-              <a href="#fn2" className="sup">2</a>
-            </span>
-            .
-          </h1>
+          <h1 className="claim">I start and build things. Some of them work.</h1>
           <p className="subclaim">
-            Product leader at <strong>Oxford University Press</strong>. Ten years building in markets most people overlook,
-            from African travel to UK telecare. Founder of <strong>Afriktrip</strong>, a traveltech startup that scaled to
-            <strong> 28 African countries</strong>.
+            Employed, founding and organising, at the same time, most weeks. Ten years across travel, film, hospitality,
+            education and publishing, finance and investment, and healthcare.
           </p>
-
-          <div className="footnote-rail">
-            {footnotes.map((footnote) => (
-              <ExternalLink
-                key={footnote.number}
-                href={footnote.url}
-                id={`fn${footnote.number}`}
-                className={`footnote ${activeFootnote === footnote.number ? "is-active" : ""}`}
-              >
-                <span className="footnote-number">{footnote.number}</span>
-                <span>
-                  {footnote.title}
-                  <span className="footnote-source">{footnote.source}</span>
-                </span>
-              </ExternalLink>
-            ))}
-          </div>
 
           <div className="hero-actions">
             <a className="editorial-button primary-button" href="#work">See selected work <span>→</span></a>
@@ -403,7 +326,7 @@ export default function EditorialLanding() {
 
         <section className="editorial-section" id="now">
           <SectionHeading title="Current work" note="Updated Aug 2026" />
-          <p className="section-lede">Where my time goes at the moment. Everything below this section is history.</p>
+          <p className="section-lede">Where my time goes at the moment.</p>
           <div className="current-grid">
             {[
               {
@@ -436,7 +359,7 @@ export default function EditorialLanding() {
 
         <section className="editorial-section" id="work">
           <SectionHeading title="Selected work" note={`${featuredWork.length} of ${experience.length + 1}`} />
-          <p className="section-lede">Seven things I&apos;d want judged. Each links through to the full account.</p>
+          <p className="section-lede">Curated, not comprehensive.</p>
           <div className="work-list">
             {featuredWork.map((item) => (
               <WorkRow key={item.company} item={item} />

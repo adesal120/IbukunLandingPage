@@ -312,7 +312,9 @@ export default function EditorialLanding() {
       <main className="editorial-wrap">
         <header className="editorial-hero">
           <div className="status"><span className="status-dot" /> London, United Kingdom</div>
-          <h1 className="claim">I start and build things. Some of them work.</h1>
+          <h1 className="claim">
+            I start and build things. <span className="claim-accent">Some of them work.</span>
+          </h1>
           <p className="subclaim">
             Employed, founding and organising, at the same time, most weeks. Ten years across travel, film, hospitality,
             education and publishing, finance and investment, and healthcare.

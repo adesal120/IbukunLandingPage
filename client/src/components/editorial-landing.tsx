@@ -122,7 +122,7 @@ function buildWorkItem(company: string): WorkItem {
           : item.role,
     description:
       company === "Afriktrip / Direx"
-        ? "Built the booking marketplace for African tours and experiences, from zero to 7,500+ listed tours, helping 1,000+ tourism businesses sell their packages across 28 countries."
+        ? "Built the booking marketplace for African tours and experiences, from zero to 7,500+ listings, helping 1,000+ tourism businesses sell their packages across 28 countries."
         : company === "Panlit"
             ? "Panlit is an AI guest experience platform for restaurants, wellness businesses, and activity providers in the UK and US. It answers every inbound call and message on WhatsApp, Instagram, Facebook Messenger, web chat, and contact forms — instantly, in your brand voice."
           : company === "Oxford University Press"

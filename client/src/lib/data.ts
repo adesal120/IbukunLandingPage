@@ -52,7 +52,7 @@ export const experience = [
     company: "Afriktrip / Direx",
     role: "Founder",
     tags: ["Venture", "Professional"],
-    description: "Built the booking marketplace for African tours and experiences, from zero to 7,500+ listed tours, helping 1,000+ tourism businesses sell their packages across 28 countries.",
+    description: "Built the booking marketplace for African tours and experiences, from zero to 7,500+ listings, helping 1,000+ tourism businesses sell their packages across 28 countries.",
     url: "https://www.youtube.com/@afriktrip5839/featured"
   },
   {

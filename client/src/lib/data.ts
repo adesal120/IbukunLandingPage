@@ -52,7 +52,7 @@ export const experience = [
     company: "Afriktrip / Direx",
     role: "Founder",
     tags: ["Venture", "Professional"],
-    description: "Founded the 'TripAdvisor for Africa' — an online marketplace that grew to 7,500+ tours and activities across 28 countries, backed by Daniel Gross (former YC Partner). The venture evolved into Direx, a booking management system for tourism businesses, recognised as one of Phocuswire's Hot 25 Travel Startups for 2024 and a Middle East & Africa Regional Winner at the Global Startup Pitch.",
+    description: "Built the booking marketplace for African tours and experiences, from zero to 7,500+ listed tours, helping 1,000+ tourism businesses sell their packages across 28 countries.",
     url: "https://www.youtube.com/@afriktrip5839/featured"
   },
   {

@@ -3,7 +3,7 @@ export const experience = [
     company: "Panlit",
     role: "Creator",
     tags: ["Venture"],
-    description: "Panlit is an AI voice and messaging agent for hospitality businesses. It answers every inbound phone call and message across your web and social channels—instantly, in your brand’s voice.",
+    description: "Panlit is an AI guest experience platform for restaurants, wellness businesses, and activity providers in the UK and US. It answers every inbound call and message on WhatsApp, Instagram, Facebook Messenger, web chat, and contact forms — instantly, in your brand voice.",
     url: "https://panlit.com"
   },
   {
@@ -247,11 +247,14 @@ export const press = [
 ];
 
 export const speaking = [
-  { title: "Africa Youth in Tourism Innovation Summit 2024", url: "https://youthtourismsummit.com/2024-speakers/" },
-  { title: "Web in Travel Singapore 2023", url: "https://www.youtube.com/watch?v=T53r9Ca-qM0" },
-  { title: "Africa Youth in Tourism Innovation Summit 2023", url: "https://youthtourismsummit.com/2023-speakers/" },
-  { title: "Founderfest Day 2021", url: "https://www.foundervine.com/#" },
-  { title: "Web in Travel Africa 2021", url: "https://www.youtube.com/watch?v=GYCaWWSxEsE" }
+  { title: "Africa Youth in Tourism Innovation Summit 2024", url: "https://youthtourismsummit.com/2024-speakers/", tag: "Speaker" },
+  { title: "Web in Travel Singapore 2023", url: "https://www.youtube.com/watch?v=T53r9Ca-qM0", tag: "Speaker" },
+  { title: "Africa Youth in Tourism Innovation Summit 2023", url: "https://youthtourismsummit.com/2023-speakers/", tag: "Speaker" },
+  { title: "Founderfest Day 2021", url: "https://www.foundervine.com/#", tag: "Speaker" },
+  { title: "Web in Travel Africa 2021", url: "https://www.youtube.com/watch?v=GYCaWWSxEsE", tag: "Speaker" },
+  { title: "Connect and Ignite 2024", url: "https://youtu.be/BWvJiglc0Z0?si=zeZGLA8cl71buAjv", tag: "Organiser" },
+  { title: "Connect and Ignite 2025", url: "https://youtu.be/XpumA-2f6oA?si=O1Mqz0SQFsOeH58V", tag: "Organiser" },
+  { title: "Connect and Ignite 2026", url: null, tag: "Organiser" }
 ];
 
 export const contact = {

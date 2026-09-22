@@ -124,7 +124,7 @@ function buildWorkItem(company: string): WorkItem {
       company === "Afriktrip / Direx"
         ? "Built the booking marketplace for African tours and experiences, from zero to 7,500+ listed tours across 28 countries. Raised from Daniel Gross's Pioneer, shipped book-now-pay-later, and took it through Barclays Black Founder Accelerator and Envision."
         : company === "Panlit"
-          ? "Took an AI concierge for independent hospitality businesses from nothing to launch in twelve months, clearing Meta App Review and UK telecoms regulatory approval along the way."
+            ? "Panlit is an AI guest experience platform for restaurants, wellness businesses, and activity providers in the UK and US. It answers every inbound call and message on WhatsApp, Instagram, Facebook Messenger, web chat, and contact forms — instantly, in your brand voice."
           : company === "Oxford University Press"
             ? "Own five enterprise content platforms at the world's largest university press, a £1m+ portfolio covering metadata, taxonomy, rights and permissions, and digital distribution. They govern how 600k+ pieces of content are described, classified, licensed and delivered to 200+ partners including Apple, Google, Amazon and Spotify."
             : company === "TN Naija"
@@ -304,7 +304,7 @@ export default function EditorialLanding() {
             <a href="#work" onClick={() => setMenuOpen(false)}>Work</a>
             <a href="#recognition" onClick={() => setMenuOpen(false)}>Recognition</a>
             <a href="#press" onClick={() => setMenuOpen(false)}>Press</a>
-            <a className="kit-link" href="#speaking" onClick={() => setMenuOpen(false)}>Speaking</a>
+            <a className="kit-link" href="#speaking" onClick={() => setMenuOpen(false)}>Speaking/Organising</a>
           </div>
         </div>
       </nav>
@@ -432,15 +432,23 @@ export default function EditorialLanding() {
         </section>
 
         <section className="editorial-section" id="speaking">
-          <SectionHeading title="Speaking" note="Available for 2026–27" />
+          <SectionHeading title="Speaking/Organising" note="Available for 2026–27" />
           <p className="section-lede">On African travel infrastructure, AI in operational industries, and building across the UK–Africa corridor.</p>
           <div className="talks-grid">
             {speaking.map((event) => (
-              <ExternalLink key={event.url} href={event.url} className="talk-card">
-                <span className="eyebrow">Speaker</span>
-                <h3>{event.title}</h3>
-                <span className="talk-arrow">Visit event →</span>
-              </ExternalLink>
+              event.url ? (
+                <ExternalLink key={event.title} href={event.url} className="talk-card">
+                  <span className="eyebrow">{event.tag}</span>
+                  <h3>{event.title}</h3>
+                  <span className="talk-arrow">Visit event →</span>
+                </ExternalLink>
+              ) : (
+                <div key={event.title} className="talk-card">
+                  <span className="eyebrow">{event.tag}</span>
+                  <h3>{event.title}</h3>
+                  <span className="talk-arrow">Organising →</span>
+                </div>
+              )
             ))}
             <a className="talk-card invite-card" href={`mailto:${contact.email}?subject=Speaking invitation`}>
               <h3>Invite me to speak <span>→</span></h3>

@@ -254,7 +254,7 @@ export const speaking = [
   { title: "Web in Travel Africa 2021", url: "https://www.youtube.com/watch?v=GYCaWWSxEsE", tag: "Speaker" },
   { title: "Connect and Ignite 2024", url: "https://youtu.be/BWvJiglc0Z0?si=zeZGLA8cl71buAjv", tag: "Organiser" },
   { title: "Connect and Ignite 2025", url: "https://youtu.be/XpumA-2f6oA?si=O1Mqz0SQFsOeH58V", tag: "Organiser" },
-  { title: "Connect and Ignite 2026", url: null, tag: "Organiser" }
+  { title: "Connect x Ignite 2026", url: "https://tnnaija.com/connect/", tag: "Organiser" }
 ];
 
 export const contact = {

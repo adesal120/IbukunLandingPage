@@ -1,513 +1,445 @@
-import { useState } from "react";
+import { useState, type AnchorHTMLAttributes, type ReactNode } from "react";
 import { achievements, contact, experience, press, speaking } from "@/lib/data";
+import { travelCountries } from "@/lib/travel-data";
+import visitedMap from "@/assets/visited-map.svg";
+import "./editorial-refresh.css";
 
-type WorkItem = {
-  company: string;
-  role: string;
-  tags?: string[];
-  description: string;
-  url: string;
-  period: string;
-  proof: string[];
-};
-
-const ansden: WorkItem = {
-  company: "Ansden",
-  role: "Founder",
-  tags: ["Venture"],
-  description:
-    "Conversational AI triage for telecare alarm receiving centres. It absorbs false pendant activations, welfare calls and technical alerts, and escalates genuine emergencies to human operators with a structured handover, so control room staff spend their time on the calls that matter.",
-  url: "https://ansden.com",
-  period: "2026 — present",
-  proof: ["1.8m UK telecare households affected by the Jan 2027 PSTN switch-off", "100+ housing associations and councils mapped as buyers"],
-};
-
-const featuredCompanies = [
-  "Afriktrip / Direx",
-  "Ansden",
-  "Panlit",
-  "Oxford University Press",
-  "TN Naija",
-  "GTVAdvice",
+const featuredCompanies = ["Afriktrip / Direx", "Panlit", "Oxford University Press", "TN Naija"];
+const pressOrder = [
+  "Presenting the Hot 25",
+  "5 startups advance to grand finals",
+  "African founders in UK get new platform",
+  "Meet our Rising Stars 5.0",
+  "Nigerian startup Afriktrip launches",
+  "TN Naija Announces Connect & Ignite",
+  "Connect and Ignite: Celebrating Nigerian",
+  "Top 3 African youth entrepreneurs",
+  "Meet the Pioneers",
+  "Ibukunoluwa Salau (Afriktrip)",
 ];
 
-const workDetails: Record<string, { period: string; proof: string[] }> = {
-  "Afriktrip / Direx": {
-    period: "2020 — 2024",
-    proof: [
-      "Phocuswire Hot 25 Travel Startups, 2024",
-      "Regional winner, Middle East & Africa, Global Startup Pitch 2023",
-      "Top 5, Africa Youth in Tourism Innovation Challenge 2023",
-      "Covered by Disrupt Africa, BenjaminDada, TechBuild",
-    ],
-  },
-  Panlit: {
-    period: "2025 — present",
-    proof: ["Live merchants across five countries on three continents"],
-  },
-  "Oxford University Press": {
-    period: "2024 — present",
-    proof: [
-      "Platforms: CoreSource, Scout, PoolParty, ELT PMD, ELT PDRS",
-      "Academic, Education and English Language Teaching across 10+ countries",
-    ],
-  },
-  "TN Naija": {
-    period: "Community",
-    proof: ["3 editions organised, 2024 to 2026", "Covered by TechEconomy, BusinessDay, BenjaminDada"],
-  },
-  "SHL Capital": {
-    period: "Venture",
-    proof: ["Pre-seed and seed stage, global mandate"],
-  },
-  GTVAdvice: {
-    period: "Community",
-    proof: [
-      "70% endorsement success rate among applicants who used the guidance",
-      "Endorsed on the Digital Technology route personally",
-    ],
-  },
-  Coremaker: {
-    period: "Professional",
-    proof: ["Fintech, open-source and investment technology", "London-based software consultancy"],
-  },
-  Quabbly: {
-    period: "Professional",
-    proof: ["African no-code automation platform", "Product marketing and go-to-market"],
-  },
-  AfroScanner: {
-    period: "Project",
-    proof: ["Travel intelligence for Africa", "Visa, health and entry guidance"],
-  },
-  "Tour Guide Africa Series": {
-    period: "Community",
-    proof: ["Founder stories from Africa's tourism economy", "Editor-in-Chief"],
-  },
-  StopTheSpread: {
-    period: "Project",
-    proof: ["50,000 daily active users at peak", "Adopted by 100+ GP practices"],
-  },
-  "Andela Learning Community": {
-    period: "Community",
-    proof: ["ALC x Microsoft 4Afrika Skillslab", "Cloud mentoring"],
-  },
-  "First City Monument Bank": {
-    period: "Professional",
-    proof: ["Production SQL and data integration", "$5bn in assets"],
-  },
-  Cralocs: {
-    period: "Venture",
-    proof: ["Airbnb for film locations", "Top 5 Product of the Day on Product Hunt"],
-  },
-  BoxPlay: {
-    period: "Venture",
-    proof: ["Netflix for movie rentals in Nigeria", "Built at 18"],
-  },
-};
-
-function buildWorkItem(company: string): WorkItem {
-  if (company === "Ansden") return ansden;
-  const item = experience.find((job) => job.company === company);
-  if (!item) {
-    throw new Error(`Missing experience entry for ${company}`);
-  }
-
-  return {
-    ...item,
-    role:
-      company === "TN Naija"
-        ? "Ops & Logistics Lead"
-        : company === "Panlit"
-          ? "Founder"
-          : item.role,
-    description:
-      company === "Afriktrip / Direx"
-        ? "Built the booking marketplace for African tours and experiences, from zero to 7,500+ listings, helping 1,000+ tourism businesses sell their packages across 28 countries."
-        : company === "Panlit"
-            ? "Panlit is an AI guest experience platform for restaurants, wellness businesses, and activity providers in the UK and US. It answers every inbound call and message on WhatsApp, Instagram, Facebook Messenger, web chat, and contact forms — instantly, in your brand voice."
-          : company === "Oxford University Press"
-            ? "Own five enterprise content platforms at the world's largest university press, a £1m+ portfolio covering metadata, taxonomy, rights and permissions, and digital distribution. They govern how 600k+ pieces of content are described, classified, licensed and delivered to 200+ partners including Apple, Google, Amazon and Spotify."
-            : company === "TN Naija"
-              ? "Run end-to-end operations for one of the UK's most prominent UK–Africa tech communities, including its annual convening. Organised three editions across London and Birmingham, bringing together 400+ founders, operators and investors across the corridor."
-              : company === "SHL Capital"
-                ? "Sourced pre-seed and seed deals for a fund deploying $15m a year, into a portfolio that includes Clubhouse, Notion and Figma."
-                : company === "GTVAdvice"
-                  ? "The reference resource for technologists applying for the UK Global Talent Visa, built after coming through the route myself. Demystifies eligibility, evidence and recommendation letters on one of the UK's most competitive immigration routes, for people who have no one to ask."
-                  : item.description,
-    period: workDetails[company]?.period ?? item.tags?.join(" · ") ?? "Experience",
-    proof: workDetails[company]?.proof ?? [],
-  };
-}
-
-const featuredWork = featuredCompanies.map((company) => {
-  const item = buildWorkItem(company);
-  return {
-    ...item,
-    tags: company === "Afriktrip / Direx" || company === "Panlit" || company === "Ansden" ? ["Venture"] : item.tags,
-  };
-});
-const additionalWork = experience
-  .filter((item) => !featuredCompanies.includes(item.company))
-  .map((item) => buildWorkItem(item.company));
-
-const featuredRecognition = [
+const awards = [
   {
+    group: "Won",
     year: "2024",
-    title: "Hot 25 Travel Startups",
-    source: "Phocuswire, annual global selection",
-    url: press.find((item) => item.title.includes("Hot 25"))?.url ?? "https://www.phocuswire.com/Hot-25-Travel-Startups-for-2024-Direx",
+    title: "Hot 25 Travel Startups, PhocusWire",
+    description: "PhocusWire's annual list of the 25 travel startups worldwide its editors expect to shape the industry in the year ahead.",
+    url: press.find((item) => item.title.includes("Hot 25"))?.url,
   },
   {
+    group: "Won",
     year: "2023",
-    title: "MEA Winner, Global Traveltech Startup Pitch",
-    source: "Web in Travel",
-    url: achievements.find((item) => item.title.includes("Middle East and Africa"))?.url ?? "https://witevents.com/globalstartuppitch/",
+    title: "MEA Winner, Phocuswright × Web in Travel Global Startup Pitch",
+    description: "Won the Middle East and Africa round of one of travel tech's best-known pitch competitions, earning a place in the global grand final.",
+    url: achievements.find((item) => item.title.includes("Middle East and Africa"))?.url,
   },
   {
+    group: "Won",
     year: "2023",
-    title: "City Winner and Regional Finalist, Rising Stars 5.0",
-    source: "Tech Nation, Midlands",
-    url: achievements.find((item) => item.title.includes("Tech Nation"))?.url ?? "https://technation.io/programmes/rising-stars/",
+    title: "Top 5, Africa Youth in Tourism Innovation Challenge",
+    description: "Named among the five standout startups at the continent's summit for young innovators in tourism.",
+    url: achievements.find((item) => item.title.includes("Africa Youth"))?.url,
   },
   {
+    group: "Won",
     year: "2023",
-    title: "Barclays Black Founder Accelerator, Cohort 4.0",
-    source: "Selected cohort",
-    url: achievements.find((item) => item.title.includes("Barclays"))?.url ?? "https://www.foundervine.com/barclays-accelerator-cohort",
+    title: "City Winner and Regional Finalist, Tech Nation Rising Stars 5.0",
+    description: "Won the city round, then reached the Midlands regional final, of Tech Nation's national competition for the UK's most promising early-stage tech startups.",
+    url: achievements.find((item) => item.title.includes("Tech Nation"))?.url,
   },
   {
+    group: "Won",
     year: "2021",
-    title: "Winner, Pioneer.app Tournament",
-    source: "Global weekly founder tournament, backed by Daniel Gross",
-    url: achievements.find((item) => item.title.includes("Pioneer"))?.url ?? "https://pioneer.app/winners/ibukunoluwa-salau",
+    title: "Winner, Pioneer Tournament",
+    description: "Won Pioneer, the global online founder tournament backed by Daniel Gross, where startups from around the world are ranked on their weekly progress.",
+    url: achievements.find((item) => item.title.includes("Pioneer"))?.url,
   },
   {
-    year: "2021",
-    title: "Global Talent, Digital Technology",
-    source: "UK Home Office endorsement for exceptional talent",
-    url: achievements.find((item) => item.title.includes("Global Talent"))?.url ?? "https://technation.io/visa-tech-nation-visa-guide/",
-  },
-  {
-    year: "2021",
-    title: "Finalist, Financial Times × Seedstars SDG Challenge",
-    source: "Global finalist",
-    url: achievements.find((item) => item.title.includes("Financial Times"))?.url ?? "https://drive.google.com/file/d/11qmPCiSVUZSHPPGE4PwVFqh4Zje-A1cX/view?usp=sharing",
-  },
-  {
+    group: "Selected for",
     year: "2024",
     title: "AFRISE Challenge, Cohort #2",
-    source: "Top 30 startups",
-    url: achievements.find((item) => item.title.includes("AFRISE"))?.url ?? "https://hindsightventures.co/flagship-programs/afrise-challenge-2024",
+    description: "Selected among the top 30 startups for Hindsight Ventures' AFRISE Challenge.",
+    url: achievements.find((item) => item.title.includes("AFRISE"))?.url,
+  },
+  {
+    group: "Selected for",
+    year: "2023",
+    title: "Barclays Black Founder Accelerator, Cohort 4.0",
+    description: "The Barclays and Foundervine accelerator for high-potential Black founders, with mentoring, expert support and access to investors.",
+    url: achievements.find((item) => item.title.includes("Barclays"))?.url,
+  },
+  {
+    group: "Selected for",
+    year: "2023",
+    title: "Envision Accelerator, Cohort #6",
+    description: "",
+    url: achievements.find((item) => item.title.includes("Envision"))?.url,
+  },
+  {
+    group: "Selected for",
+    year: "2021",
+    title: "Global Talent, Digital Technology",
+    description: "Endorsed by Tech Nation for the UK Global Talent Visa, the route reserved for leaders and emerging leaders in digital technology.",
+    url: achievements.find((item) => item.title.includes("Global Talent"))?.url,
+  },
+  {
+    group: "Selected for",
+    year: "2021",
+    title: "Global Finalist, Financial Times × Seedstars SDG Challenge",
+    description: "Startups tackling the UN Sustainable Development Goals, judged by the Financial Times and Seedstars.",
+    url: achievements.find((item) => item.title.includes("Financial Times"))?.url,
+  },
+  {
+    group: "Selected for",
+    year: "2021",
+    title: "Fellow, RoundtripAfrika Fellowship",
+    description: "Part of the inaugural class of fellows.",
+    url: achievements.find((item) => item.title.includes("RoundtripAfrika"))?.url,
+  },
+  {
+    group: "Selected for",
+    year: "2021",
+    title: "Alumni, Wimbart Africa PR Programme",
+    description: "Wimbart's programme for African tech founders on telling their story to press and investors.",
+    url: achievements.find((item) => item.title.includes("Wimbart"))?.url,
   },
 ];
 
-const achievementYears: Array<[string, string]> = [
-  ["Envision", "2023"],
-  ["Africa Youth", "2023"],
-  ["Azure AI", "2021"],
-  ["Azure Fundamentals", "2021"],
-  ["BSc", "2018"],
-  ["Computer Professional", "2021"],
-  ["RoundtripAfrika", "2021"],
-  ["Wimbart", "2021"],
-  ["Handball", "2018"],
-  ["Volleyball", "2018"],
+const credentials = [
+  { year: "2021", title: "Certified, Microsoft Azure AI Fundamentals", url: achievements.find((item) => item.title.includes("Azure AI"))?.url },
+  { year: "2021", title: "Certified, Microsoft Azure Fundamentals", url: achievements.find((item) => item.title.includes("Azure Fundamentals"))?.url },
+  { year: "2021", title: "General Member, Computer Professionals of Nigeria", url: achievements.find((item) => item.title.includes("Computer Professional"))?.url },
+  { year: "2018", title: "BSc (Hons) Computer Science, Federal University of Agriculture, Abeokuta", url: achievements.find((item) => item.title.includes("BSc"))?.url },
+  { year: "2018", title: "Intercollegiate Silver Medallist, Handball", description: "Not strictly tech, still counts.", url: achievements.find((item) => item.title.includes("Handball"))?.url },
+  { year: "2018", title: "Intercollegiate Bronze Medallist, Volleyball", url: achievements.find((item) => item.title.includes("Volleyball"))?.url },
 ];
 
-function yearFromTitle(title: string) {
-  return title.match(/20\d{2}/)?.[0] ?? achievementYears.find(([key]) => title.includes(key))?.[1] ?? "—";
+function LinkOut({ href, children, className = "", ...props }: { href: string; children: ReactNode; className?: string } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
+  return <a className={className} href={href} target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
 }
 
-const pressYears: Array<[string, string]> = [
-  ["tn-naija-announces-connect-ignite-2026", "2026"],
-  ["connect-ignite-nigerian-uk-tech-professionals", "2026"],
-  ["Hot-25-Travel-Startups-for-2024-Direx", "2024"],
-  ["african-founders-in-uk-get-new-platform", "2024"],
-  ["5-startups-advance-grand-finals", "2023"],
-  ["top-3-african-youth", "2023"],
-  ["12-days-of-scaleups", "2023"],
-  ["nigerian-startup-afriktrip-launches", "2021"],
-  ["501-ibukunoluwa-salau", "2021"],
-  ["meet-the-pioneers-january-2021", "2021"],
-  ["aytis-unveils", "2023"],
-  ["Meet-the-15-semifinalists", "2023"],
-  ["meet-the-25-pitching", "2023"],
-  ["south-african-airways-partners", "2023"],
-  ["afriktrip-africa-tour-book", "2021"],
-  ["global-accelerators-nigerian", "2021"],
-  ["wimbart-office-hours", "2021"],
-  ["ibukunoluwa-salau-afriktrip", "2021"],
-  ["startup-afriktrip-africa-world", "2021"],
-  ["cralocs", "2021"],
-];
-
-function pressYear(url: string) {
-  return pressYears.find(([key]) => url.includes(key))?.[1] ?? "—";
-}
-
-const selectedPressTitles = [
-  "TN Naija Announces Connect & Ignite",
-  "Connect and Ignite: Celebrating Nigerian Tech Professionals",
-  "Presenting the Hot 25",
-  "African founders in UK get new platform",
-  "5 startups advance to grand finals",
-  "Top 3 African youth entrepreneurs",
-  "Meet our Rising Stars 5.0",
-  "Nigerian startup Afriktrip launches an online travel marketplace",
-  "Ibukunoluwa Salau (Afriktrip) On Booking Trips to Africa",
-  "Meet the Pioneers: January 2021",
-];
-
-const selectedPress = selectedPressTitles
-  .map((title) => press.find((item) => item.title.includes(title)))
-  .filter((item): item is (typeof press)[number] => Boolean(item));
-
-const additionalPress = press.filter((item) => !selectedPress.some((selected) => selected.url === item.url));
-
-function ExternalLink({
-  children,
-  href,
-  className = "",
-}: {
-  children: React.ReactNode;
-  href: string;
-  className?: string;
-}) {
+function SectionTitle({ title, note }: { title: string; note?: string }) {
   return (
-    <a className={className} href={href} target="_blank" rel="noopener noreferrer">
-      {children}
-    </a>
+    <div className="portfolio-section-heading">
+      <h2>{title}</h2>
+      {note ? <span className="portfolio-section-note portfolio-eyebrow">{note}</span> : null}
+    </div>
+  );
+}
+
+function AwardRow({ year, title, description, url }: { year: string; title: string; description?: string; url?: string }) {
+  const titleNode = url ? <LinkOut className="portfolio-award-title" href={url}>{title}</LinkOut> : <strong className="portfolio-award-title">{title}</strong>;
+  return (
+    <div className="portfolio-award">
+      <span className="portfolio-award-year">{year}</span>
+      <div>{titleNode}{description ? <p className="portfolio-award-desc">{description}</p> : null}</div>
+    </div>
   );
 }
 
 export default function EditorialLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [countryIndex, setCountryIndex] = useState(0);
+  const [recordOpen, setRecordOpen] = useState(false);
+  const [credentialsOpen, setCredentialsOpen] = useState(true);
+  const [pressOpen, setPressOpen] = useState(true);
+  const currentCountry = travelCountries[countryIndex];
+  const selectedPress = pressOrder
+    .map((needle) => press.find((item) => item.title.includes(needle)))
+    .filter((item): item is (typeof press)[number] => Boolean(item));
+  const allPress = [...selectedPress, ...press.filter((item) => !selectedPress.some((selected) => selected.url === item.url))];
+  const additionalWork = experience.filter((item) => !featuredCompanies.includes(item.company));
+  const pressYear = (title: string) => {
+    if (title.includes("Connect & Ignite") || title.includes("Connect and Ignite")) return "2026";
+    if (title.includes("Hot 25") || title.includes("UK get new platform")) return "2024";
+    if (title.includes("grand finals") || title.includes("Rising Stars") || title.includes("AYTIS") || title.includes("youth") || title.includes("semifinalists") || title.includes("pitching") || title.includes("South African Airways")) return "2023";
+    return "2021";
+  };
+  const orderedSpeaking = [
+    ...speaking.filter((event) => event.tag === "Speaker"),
+    ...speaking.filter((event) => event.tag === "Organiser").sort((a, b) => Number(b.title.match(/20\d{2}/)?.[0] ?? 0) - Number(a.title.match(/20\d{2}/)?.[0] ?? 0)),
+  ];
 
   return (
-    <div className="editorial-site" id="top">
-      <nav className="editorial-nav" aria-label="Main navigation">
-        <div className="editorial-wrap nav-inner">
-          <a className="editorial-mark" href="#top" onClick={() => setMenuOpen(false)}>
-            IBUKUNOLUWA<span>.</span>
-          </a>
-          <button
-            className="nav-toggle"
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="primary-navigation"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
+    <div className="portfolio" id="top">
+      <header className="portfolio-nav">
+        <nav className="portfolio-shell portfolio-nav-inner" aria-label="Main navigation">
+          <a className="portfolio-brand" href="#top" onClick={() => setMenuOpen(false)}>IBUKUNOLUWA<span>.</span></a>
+          <button className="portfolio-menu" type="button" aria-expanded={menuOpen} aria-controls="portfolio-nav-links" onClick={() => setMenuOpen((open) => !open)}>
             {menuOpen ? "Close" : "Menu"}
           </button>
-          <div id="primary-navigation" className={`editorial-navlinks ${menuOpen ? "is-open" : ""}`}>
-            <a href="#now" onClick={() => setMenuOpen(false)}>Current</a>
-            <a href="#work" onClick={() => setMenuOpen(false)}>Work</a>
-            <a href="#recognition" onClick={() => setMenuOpen(false)}>Recognition</a>
-            <a href="#press" onClick={() => setMenuOpen(false)}>Press</a>
-            <a className="kit-link" href="#speaking" onClick={() => setMenuOpen(false)}>Speaking/Organising</a>
-          </div>
-        </div>
-      </nav>
-
-      <main className="editorial-wrap">
-        <header className="editorial-hero">
-          <div className="status"><span className="status-dot" /> London, United Kingdom</div>
-          <h1 className="claim">
-            I start and build things. <span className="claim-accent">Some of them work.</span>
-          </h1>
-          <p className="subclaim">
-            Employed, founding and organising, at the same time, most weeks. Ten years across travel, film, hospitality,
-            education and publishing, finance and investment, and healthcare.
-          </p>
-
-          <div className="hero-actions">
-            <a className="editorial-button primary-button" href="#work">See selected work <span>→</span></a>
-            <a className="editorial-button ghost-button" href={`mailto:${contact.email}`}>{contact.email}</a>
-          </div>
-        </header>
-
-        <section className="editorial-section" id="now">
-          <SectionHeading title="Current work" note="Updated Aug 2026" />
-          <p className="section-lede">Where my time goes at the moment.</p>
-          <div className="current-grid">
+          <div className={`portfolio-navlinks${menuOpen ? " is-open" : ""}`} id="portfolio-nav-links">
             {[
-              {
-                role: "Product Manager",
-                company: "Oxford University Press",
-                description: "Five enterprise content platforms, a £1m+ portfolio, serving 200+ global partners including Apple, Google, Amazon and Spotify.",
-                url: buildWorkItem("Oxford University Press").url,
-              },
-              {
-                role: "Founder · Pre-pilot",
-                company: "Ansden",
-                description: ansden.description,
-                url: ansden.url,
-              },
-              {
-                role: "Founder · Live",
-                company: "Panlit",
-                description: buildWorkItem("Panlit").description,
-                url: buildWorkItem("Panlit").url,
-              },
-            ].map((item) => (
-              <ExternalLink key={item.company} href={item.url} className="current-card">
-                <span className="work-role">{item.role}</span>
-                <h3>{item.company}</h3>
-                <p>{item.description}</p>
-              </ExternalLink>
-            ))}
+              ["Now", "#now"],
+              ["Work", "#work"],
+              ["Places", "#travel"],
+              ["Recognition", "#recognition"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>)}
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section className="portfolio-shell portfolio-hero" aria-labelledby="portfolio-title">
+          <div className="portfolio-hero-copy">
+            <p className="portfolio-kicker"><span className="portfolio-kicker-dot" /> UK · Founder · Product · Operator</p>
+            <h1 id="portfolio-title">I build the systems things quietly run on.<br /><span>You&apos;d only notice if I got it wrong.</span></h1>
+            <p className="portfolio-hero-intro">My favourite problems are too unglamorous for most people and too important to ignore. I&apos;ve built products, companies and communities around them, in more industries than is strictly sensible.</p>
+            <div className="portfolio-actions">
+              <a className="portfolio-button portfolio-button-dark" href="#now">See the bet <span aria-hidden="true">→</span></a>
+              <a className="portfolio-button" href={`mailto:${contact.email}`}>{contact.email}</a>
+            </div>
+          </div>
+          <aside className="portfolio-brief" aria-label="The short version">
+            <p className="portfolio-brief-title portfolio-mono">The short version</p>
+            <div className="portfolio-brief-rows">
+              <div className="portfolio-brief-row"><b>NOW</b><span>Building Ansden, AI for telecare and independent living</span></div>
+              <div className="portfolio-brief-row"><b>ALSO</b><span>Running Connect x Ignite, 400+ in the room each edition</span></div>
+              <div className="portfolio-brief-row"><b>BEFORE</b><span>Built Afriktrip, Phocuswire Hot 25</span></div>
+            </div>
+          </aside>
+        </section>
+
+        <section className="portfolio-shell portfolio-section" id="now">
+          <SectionTitle title="Current work" note="Updated Oct 2026" />
+          <p className="portfolio-eyebrow portfolio-bet-label">The bet</p>
+          <article className="portfolio-bet">
+            <div className="portfolio-bet-copy">
+              <p className="portfolio-bet-status portfolio-mono">Founder · Pre-pilot · 2026 to present</p>
+              <h3>Ansden</h3>
+              <p>Technology for telecare and independent living, starting in the control room. First up: AI that takes the routine calls, inbound and outbound, so operators can focus on the real emergencies. After that, whatever else it takes to keep people safe at home.</p>
+              <p className="portfolio-bet-italic">Nobody dreams of building for telecare control rooms. That&apos;s rather the point.</p>
+              <LinkOut className="portfolio-button" href="https://ansden.com">Visit ansden.com <span aria-hidden="true">→</span></LinkOut>
+            </div>
+          </article>
+          <div className="portfolio-current-grid">
+            <div>
+              <p className="portfolio-eyebrow portfolio-current-group-label">The day job</p>
+              <LinkOut className="portfolio-current-card" href={experience.find((item) => item.company === "Oxford University Press")!.url}>
+                <p className="portfolio-role portfolio-eyebrow">Product Manager</p>
+                <h3>Oxford University Press</h3>
+                <p>Five enterprise content platforms, a £1m+ portfolio, serving 200+ partners including Apple, Google, Amazon and Spotify.</p>
+              </LinkOut>
+            </div>
+            <div>
+              <p className="portfolio-eyebrow portfolio-current-group-label">Also, because I can&apos;t help myself</p>
+              <div className="portfolio-current-cards">
+                <LinkOut className="portfolio-current-card" href={experience.find((item) => item.company === "TN Naija")!.url}>
+                  <p className="portfolio-role portfolio-eyebrow">Ops &amp; Logistics Lead</p>
+                  <h3>TN Naija</h3>
+                  <p>Connect x Ignite, the flagship gathering for Africans building in UK tech, and the community behind it. 400+ founders, operators and investors each edition. I run the operations.</p>
+                  <span className="portfolio-card-link">Visit <span aria-hidden="true">→</span></span>
+                </LinkOut>
+                <LinkOut className="portfolio-current-card" href={experience.find((item) => item.company === "GTVAdvice")!.url}>
+                  <p className="portfolio-role portfolio-eyebrow">Founder</p>
+                  <h3>GTVAdvice</h3>
+                  <p>The Global Talent Visa is one of the UK&apos;s most competitive immigration routes. I came through it myself, and now I help other technologists do the same: a guide for those going solo, tailored support for those who&apos;d rather not.</p>
+                  <p>70% endorsement rate.</p>
+                  <span className="portfolio-card-link">Visit <span aria-hidden="true">→</span></span>
+                </LinkOut>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="editorial-section" id="work">
-          <SectionHeading title="Selected work" note={`${featuredWork.length} of ${experience.length + 1}`} />
-          <p className="section-lede">Curated, not comprehensive.</p>
-          <div className="work-list">
-            {featuredWork.map((item) => (
-              <WorkRow key={item.company} item={item} />
-            ))}
+        <div className="portfolio-work-wrap">
+          <section className="portfolio-shell portfolio-section" id="work">
+            <SectionTitle title="Selected work" note="4 of 16" />
+            <p className="portfolio-section-intro">Curated, not comprehensive.</p>
+            <article className="portfolio-work-row">
+              <div className="portfolio-work-meta">
+                <p className="portfolio-work-date portfolio-mono">2020 to 2024 · Venture</p>
+                <h3>Afriktrip / Direx</h3>
+                <p className="portfolio-work-role portfolio-mono">Founder · Closed</p>
+                <LinkOut href={experience.find((item) => item.company === "Afriktrip / Direx")!.url}>Watch <span aria-hidden="true">→</span></LinkOut>
+              </div>
+              <div className="portfolio-work-content">
+                <p>Built an online booking marketplace for African tours and experiences, from zero to 7,500+ listed tours, helping 1,000+ tourism businesses sell their packages across 28 countries.</p>
+                <p>Afriktrip was the online marketplace for tours and experiences; Direx was the booking management software operators used to run them.</p>
+                <div className="portfolio-proof"><span>Phocuswire Hot 25, 2024</span><span>MEA winner, Global Startup Pitch 2023</span><span>Top 5, AYTIS 2023</span></div>
+              </div>
+            </article>
+            <article className="portfolio-work-row">
+              <div className="portfolio-work-meta">
+                <p className="portfolio-work-date portfolio-mono">2025 to present · Venture</p>
+                <h3>Panlit</h3>
+                <p className="portfolio-work-role portfolio-mono">Founder · Live</p>
+                <LinkOut href={experience.find((item) => item.company === "Panlit")!.url}>Visit <span aria-hidden="true">→</span></LinkOut>
+              </div>
+              <div className="portfolio-work-content">
+                <p>AI guest experience platform for restaurants, wellness businesses and activity providers in the UK and US, answering calls and messages across WhatsApp, Instagram, Messenger, web chat and contact forms.</p>
+                <p>It&apos;s where I learned what conversational AI gets right and wrong on real calls, before taking it somewhere the stakes are higher.</p>
+                <div className="portfolio-proof"><span>5 countries, 3 continents</span></div>
+              </div>
+            </article>
+            <article className="portfolio-work-row">
+              <div className="portfolio-work-meta">
+                <p className="portfolio-work-date portfolio-mono">2024 to present · Professional</p>
+                <h3>Oxford University Press</h3>
+                <p className="portfolio-work-role portfolio-mono">Product Manager</p>
+                <LinkOut href={experience.find((item) => item.company === "Oxford University Press")!.url}>Visit <span aria-hidden="true">→</span></LinkOut>
+              </div>
+              <div className="portfolio-work-content">
+                <p>Own five enterprise content platforms at the world&apos;s largest university press, a £1m+ portfolio covering metadata, taxonomy, rights and permissions, and digital distribution. They govern how 600k+ pieces of content are described, classified, licensed and delivered to 200+ partners including Apple, Google, Amazon and Spotify.</p>
+                <div className="portfolio-proof"><span>CoreSource, Scout, PoolParty, ELT PMD, ELT PDRS</span><span>10+ countries</span></div>
+              </div>
+            </article>
+            <article className="portfolio-work-row">
+              <div className="portfolio-work-meta">
+                <p className="portfolio-work-date portfolio-mono">2024 to present · Community</p>
+                <h3>TN Naija</h3>
+                <p className="portfolio-work-role portfolio-mono">Ops &amp; Logistics Lead</p>
+                <LinkOut href={experience.find((item) => item.company === "TN Naija")!.url}>Visit <span aria-hidden="true">→</span></LinkOut>
+              </div>
+              <div className="portfolio-work-content">
+                <p>Connect x Ignite, the flagship gathering for Africans building in UK tech, and the community behind it. 400+ founders, operators and investors each edition. I run the operations.</p>
+                <div className="portfolio-proof"><span>3 editions</span><span>400+ per conference</span><span>London · Birmingham</span></div>
+              </div>
+            </article>
+            <button className="portfolio-toggle" type="button" aria-expanded={recordOpen} onClick={() => setRecordOpen((open) => !open)}>
+              {recordOpen ? "Hide full record" : `Show the full record · ${additionalWork.length + 1} more`}
+            </button>
+            {recordOpen ? (
+              <div className="portfolio-more-grid" aria-label="Full work record">
+                <LinkOut className="portfolio-more-link" href="https://ansden.com"><strong>Ansden</strong><span>Founder</span></LinkOut>
+                {additionalWork.map((item) => (
+                  <LinkOut className="portfolio-more-link" href={item.url} key={item.company}>
+                    <strong>{item.company}</strong><span>{item.role}</span>
+                  </LinkOut>
+                ))}
+              </div>
+            ) : null}
+          </section>
+        </div>
+
+        <section className="portfolio-shell portfolio-travel" id="travel">
+          <div className="portfolio-travel-header">
+            <div className="portfolio-travel-title">
+              <p className="portfolio-eyebrow">Off the clock</p>
+              <h2>Countries I&apos;ve been to</h2>
+            </div>
+            <div className="portfolio-stats" aria-label="Travel totals">
+              <div className="portfolio-stat"><strong>13</strong><span>countries</span></div>
+              <div className="portfolio-stat"><strong>30</strong><span>cities</span></div>
+              <div className="portfolio-stat"><strong>3</strong><span>continents</span></div>
+            </div>
           </div>
-          <details className="editorial-details">
-            <summary>Show the full record · {additionalWork.length} more</summary>
-            <div className="minimal-grid">
-              {additionalWork.map((item) => (
-                <ExternalLink key={item.company} href={item.url} className="minimal-link">
-                  {item.company}<span>{item.role}</span>
-                </ExternalLink>
+          <div className="portfolio-map-card">
+            <div className="portfolio-map" aria-label="World map and visited countries">
+              <img src={visitedMap} alt="World map with the 13 countries visited highlighted" />
+              {travelCountries.map((country, index) => (
+                <button
+                  className={`portfolio-map-marker${countryIndex === index ? " is-active" : ""}`}
+                  key={country.id}
+                  type="button"
+                  aria-label={`Select ${country.name}`}
+                  aria-pressed={countryIndex === index}
+                  style={{ left: country.left, top: country.top }}
+                  onClick={() => setCountryIndex(index)}
+                />
               ))}
             </div>
-          </details>
-        </section>
-
-        <section className="editorial-section" id="recognition">
-          <SectionHeading title="Recognition" note="Externally verified" />
-          <p className="section-lede">Selected. Each was awarded by a panel I did not sit on.</p>
-          <div className="awards-grid">
-            {featuredRecognition.map((item) => (
-              <ExternalLink key={item.title} href={item.url} className="award-row">
-                <span className="award-year">{item.year}</span>
-                <span>
-                  <span className="award-title">{item.title}</span>
-                  <span className="award-source">{item.source}</span>
-                </span>
-              </ExternalLink>
-            ))}
-          </div>
-          <details className="editorial-details">
-            <summary>Show all {achievements.length} honours</summary>
-            <div className="minimal-grid">
-              {achievements
-                .filter((item) => !featuredRecognition.some((featured) => featured.url === item.url))
-                .map((item) => (
-                <ExternalLink key={item.title} href={item.url} className="minimal-link">
-                  {item.title}<span>{yearFromTitle(item.title)}</span>
-                </ExternalLink>
-              ))}
+            <div className="portfolio-map-info" aria-live="polite">
+              <div>
+                <p className="portfolio-eyebrow">{currentCountry.continent} · {countryIndex + 1} of {travelCountries.length}</p>
+                <p className="portfolio-map-country">{currentCountry.name}</p>
+                <p className="portfolio-map-cities">{currentCountry.cities}</p>
+              </div>
+              <div className="portfolio-map-controls">
+                <button type="button" aria-label="Previous country" onClick={() => setCountryIndex((index) => (index - 1 + travelCountries.length) % travelCountries.length)}>←</button>
+                <button type="button" aria-label="Next country" onClick={() => setCountryIndex((index) => (index + 1) % travelCountries.length)}>→</button>
+              </div>
             </div>
-          </details>
-        </section>
-
-        <section className="editorial-section" id="press">
-          <SectionHeading title="Press" note={`Selected · ${selectedPress.length} of ${press.length}`} />
-          <p className="section-lede">Independent coverage of the work, most recent first.</p>
-          <div className="press-list">
-            {selectedPress.map((item) => (
-              <ExternalLink key={item.url} href={item.url} className="press-row">
-                <span className="press-publisher">{item.publisher}</span>
-                <span className="press-headline">{item.title}</span>
-                <span className="press-year">{pressYear(item.url)}</span>
-              </ExternalLink>
-            ))}
           </div>
-          <details className="editorial-details">
-            <summary>Show all {press.length} mentions</summary>
-            <div className="minimal-grid">
-              {additionalPress.map((item) => (
-                <ExternalLink key={item.url} href={item.url} className="minimal-link">
-                  {item.publisher}<span>{item.title} · {pressYear(item.url)}</span>
-                </ExternalLink>
-              ))}
-            </div>
-          </details>
         </section>
 
-        <section className="editorial-section" id="speaking">
-          <SectionHeading title="Speaking/Organising" note="Available for 2026–27" />
-          <p className="section-lede">On African travel infrastructure, AI in operational industries, and building across the UK–Africa corridor.</p>
-          <div className="talks-grid">
-            {speaking.map((event) => (
-              event.url ? (
-                <ExternalLink key={event.title} href={event.url} className="talk-card">
-                  <span className="eyebrow">{event.tag}</span>
-                  <h3>{event.title}</h3>
-                  <span className="talk-arrow">Visit event →</span>
-                </ExternalLink>
-              ) : (
-                <div key={event.title} className="talk-card">
-                  <span className="eyebrow">{event.tag}</span>
-                  <h3>{event.title}</h3>
-                  <span className="talk-arrow">Organising →</span>
+        <div className="portfolio-recognition">
+          <section className="portfolio-shell portfolio-section" id="recognition">
+            <div className="portfolio-recognition-head">
+              <h2>Recognition</h2>
+              <p>Mostly from the Afriktrip years. Working on the sequel.</p>
+              <p className="portfolio-mono">Each awarded by a panel I did not sit on.</p>
+            </div>
+            <div className="portfolio-recognition-columns">
+              {["Won", "Selected for"].map((group) => (
+                <div className="portfolio-recognition-group" key={group}>
+                  <h3>{group}</h3>
+                  {awards.filter((award) => award.group === group).map((award) => <AwardRow key={award.title} {...award} />)}
                 </div>
-              )
-            ))}
-            <a className="talk-card invite-card" href={`mailto:${contact.email}?subject=Speaking invitation`}>
-              <h3>Invite me to speak <span>→</span></h3>
-            </a>
+              ))}
+              <div className="portfolio-recognition-group portfolio-credentials">
+                <h3>Credentials</h3>
+                {credentialsOpen ? (
+                  <div className="portfolio-credentials-list">
+                    {credentials.map((credential) => <AwardRow key={credential.title} {...credential} />)}
+                  </div>
+                ) : null}
+                <button className="portfolio-toggle" type="button" aria-expanded={credentialsOpen} onClick={() => setCredentialsOpen((open) => !open)}>
+                  {credentialsOpen ? "Hide credentials" : `Show credentials · ${credentials.length}`}
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section className="portfolio-press" id="press">
+          <div className="portfolio-shell portfolio-section">
+            <SectionTitle title="Press" note="21 mentions" />
+            <p className="portfolio-section-intro">Independent coverage, strongest first.</p>
+            <div className="portfolio-press-grid">
+              {(pressOpen ? allPress : selectedPress).map((item) => (
+                <LinkOut className="portfolio-press-row" href={item.url} key={item.url}>
+                  <span className="portfolio-press-meta">
+                    <span className="portfolio-press-publisher">{item.publisher}</span>
+                    <span className="portfolio-press-year">{pressYear(item.title)}</span>
+                  </span>
+                  <span className="portfolio-press-title">{item.title}</span>
+                </LinkOut>
+              ))}
+            </div>
+            <button className="portfolio-toggle" type="button" aria-expanded={pressOpen} onClick={() => setPressOpen((open) => !open)}>
+              {pressOpen ? "Show less" : `Show all ${press.length} mentions`}
+            </button>
           </div>
         </section>
 
-        <section className="contact-panel" id="contact">
-          <div>
-            <span className="eyebrow contact-eyebrow">Let&apos;s work together</span>
-            <h2>Have a problem that&apos;s too operational?</h2>
-            <p>Tell me what you&apos;re building, where it gets stuck, or what the market keeps getting wrong.</p>
-            <div className="contact-actions">
-              <a className="editorial-button contact-primary" href={`mailto:${contact.email}`}>Start a conversation <span>→</span></a>
-              <ExternalLink className="editorial-button contact-ghost" href={contact.linkedin}>LinkedIn</ExternalLink>
+        <div className="portfolio-talks">
+          <section className="portfolio-shell portfolio-section" id="speaking">
+            <SectionTitle title="Speaking & organising" note="Available for 2026–27" />
+            <div className="portfolio-talks-grid">
+              {orderedSpeaking.map((event) => {
+                const year = event.title.match(/20\d{2}/)?.[0] ?? "";
+                const title = event.title.replace(/\s20\d{2}/, "");
+                const content = <>
+                  <span className="portfolio-eyebrow">{event.tag} · {year}</span>
+                  <h3>{title.replace("Connect and Ignite", "Connect x Ignite")}</h3>
+                </>;
+                return event.url
+                  ? <LinkOut className="portfolio-talk" href={event.url} key={event.title}>{content}</LinkOut>
+                  : <div className="portfolio-talk" key={event.title}>{content}</div>;
+              })}
             </div>
-          </div>
-          <div className="contact-links">
-            <span className="eyebrow contact-eyebrow">Elsewhere</span>
-            <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            <ExternalLink href={contact.linkedin}>LinkedIn profile ↗</ExternalLink>
+            <a className="portfolio-button portfolio-button-dark portfolio-invite-cta" href={`mailto:${contact.email}?subject=Speaking%20invitation`}>Invite me to speak <span aria-hidden="true">→</span></a>
+          </section>
+        </div>
+
+        <section className="portfolio-contact-band" id="contact">
+          <div className="portfolio-shell portfolio-contact">
+            <p className="portfolio-eyebrow">Let&apos;s work together</p>
+            <h2>Have a problem that&apos;s too operational? <span>Good.</span></h2>
+            <p className="portfolio-contact-copy">If you&apos;re building, backing or writing about something hard and unglamorous, I&apos;d like to hear about it.</p>
+            <div className="portfolio-contact-actions">
+              <a className="portfolio-button" href={`mailto:${contact.email}`}>{contact.email} <span aria-hidden="true">→</span></a>
+              <LinkOut className="portfolio-button portfolio-linkedin-button" href={contact.linkedin}>LinkedIn</LinkOut>
+            </div>
+            <footer className="portfolio-dark-footer">
+              <span>Ibukunoluwa Salau · United Kingdom</span>
+              <span>Ibukunoluwa: &quot;God&apos;s blessing&quot;, from Yoruba · © 2026</span>
+            </footer>
           </div>
         </section>
       </main>
-
-      <footer className="editorial-wrap editorial-footer">
-        <div><span className="footer-name">Ibukunoluwa Salau</span> <span className="footer-separator">·</span> London, United Kingdom <span className="footer-separator">·</span> <a href={`mailto:${contact.email}`}>{contact.email}</a></div>
-        <div>Ibukunoluwa: &quot;God&apos;s blessing&quot;, from Yoruba <span className="footer-separator">·</span> © {new Date().getFullYear()}</div>
-      </footer>
     </div>
-  );
-}
-
-function SectionHeading({ title, note }: { title: string; note: string }) {
-  return (
-    <div className="section-heading">
-      <h2>{title}</h2>
-      <span className="eyebrow">{note}</span>
-    </div>
-  );
-}
-
-function WorkRow({ item }: { item: WorkItem }) {
-  return (
-    <ExternalLink href={item.url} className="work-row">
-      <div>
-        <div className="work-period">
-          {item.period}
-          {item.tags?.length && !item.period.includes(item.tags[0]) ? ` · ${item.tags.join(" · ")}` : ""}
-        </div>
-        <h3>{item.company} <span className="work-tag">{item.role}</span></h3>
-        <p className="work-description">{item.description}</p>
-        <span className="row-arrow">Visit website →</span>
-      </div>
-      <div className="proof-list">
-        {item.proof.map((proof) => (
-          <span key={proof}><i />{proof}</span>
-        ))}
-      </div>
-    </ExternalLink>
   );
 }

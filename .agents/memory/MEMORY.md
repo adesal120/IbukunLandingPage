@@ -1,0 +1,1 @@
+- [Reference fidelity](reference-fidelity.md) — supplied portfolio designs are exact copy/layout references, not loose inspiration.

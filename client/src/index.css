@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -10,9 +10,9 @@
   --ochre: #d9480f;
   --muted: #5b5868;
   --line: #d9d7e6;
-  --display: "Archivo", system-ui, sans-serif;
-  --body: "Instrument Sans", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --display: "Inclusive Sans", system-ui, sans-serif;
+  --body: "Inclusive Sans", system-ui, sans-serif;
+  --mono: "Inclusive Sans", system-ui, sans-serif;
   --portfolio-accent: #4a3ae0;
   --portfolio-paper: #eeedf6;
   --portfolio-ink: #121018;

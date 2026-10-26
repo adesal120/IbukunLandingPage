@@ -206,7 +206,7 @@ export default function EditorialLanding() {
           <p className="portfolio-eyebrow portfolio-bet-label">The bet</p>
           <article className="portfolio-bet">
             <div className="portfolio-bet-copy">
-              <p className="portfolio-bet-status portfolio-mono">Founder · Pre-pilot · 2026 to present</p>
+              <p className="portfolio-bet-status portfolio-mono">Founder · Pilot · 2026 to present</p>
               <h3>Ansden</h3>
               <p>Technology for telecare and independent living, starting in the control room. First up: AI that takes the routine calls, inbound and outbound, so operators can focus on the real emergencies. After that, whatever else it takes to keep people safe at home.</p>
               <p className="portfolio-bet-italic">Nobody dreams of building for telecare control rooms. That&apos;s rather the point.</p>
@@ -234,7 +234,7 @@ export default function EditorialLanding() {
                 <LinkOut className="portfolio-current-card" href={experience.find((item) => item.company === "GTVAdvice")!.url}>
                   <p className="portfolio-role portfolio-eyebrow">Founder</p>
                   <h3>GTVAdvice</h3>
-                  <p>The Global Talent Visa is one of the UK&apos;s most competitive immigration routes. I came through it myself, and now I help other technologists do the same: a guide for those going solo, tailored support for those who&apos;d rather not.</p>
+                  <p>The Global Talent Visa is one of the UK&apos;s most competitive immigration routes for digital technology professionals. I went through the process myself, and now I help other technologists do the same, with a 70% endorsement rate: a guide for those going solo, and tailored support for those who&apos;d rather not.</p>
                   <p>70% endorsement rate.</p>
                   <span className="portfolio-card-link">Visit <span aria-hidden="true">→</span></span>
                 </LinkOut>
@@ -359,7 +359,6 @@ export default function EditorialLanding() {
             <div className="portfolio-recognition-head">
               <h2>Recognition</h2>
               <p>Mostly from the Afriktrip years. Working on the sequel.</p>
-              <p className="portfolio-mono">Each awarded by a panel I did not sit on.</p>
             </div>
             <div className="portfolio-recognition-columns">
               {["Won", "Selected for"].map((group) => (
@@ -386,7 +385,7 @@ export default function EditorialLanding() {
         <section className="portfolio-press" id="press">
           <div className="portfolio-shell portfolio-section">
             <SectionTitle title="Press" note="21 mentions" />
-            <p className="portfolio-section-intro">Independent coverage, strongest first.</p>
+            <p className="portfolio-section-intro">Independent coverage.</p>
             <div className="portfolio-press-grid">
               {(pressOpen ? allPress : selectedPress).map((item) => (
                 <LinkOut className="portfolio-press-row" href={item.url} key={item.url}>

@@ -10,7 +10,7 @@
   overflow: clip;
   background: var(--p-paper);
   color: var(--p-ink);
-  font: 400 17px/1.55 "Instrument Sans", system-ui, sans-serif;
+  font: 400 17px/1.55 var(--body);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -32,7 +32,7 @@
 .portfolio-kicker,.portfolio-mono { font:400 12px/1.45 "IBM Plex Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
 .portfolio-kicker { display:flex; align-items:center; gap:10px; margin:0 0 28px; color:#4a4757; }
 .portfolio-kicker-dot { width:8px; height:8px; border-radius:50%; background:var(--p-accent); }
-.portfolio-hero h1 { margin:0; font:900 clamp(44px,6.4vw,88px)/.98 "Archivo",sans-serif; letter-spacing:-.035em; }
+.portfolio-hero h1 { margin:0; font:700 clamp(36px,4.8vw,64px)/1.06 var(--display); letter-spacing:-.035em; }
 .portfolio-hero h1 span { color:var(--p-accent); }
 .portfolio-hero-intro { max-width:640px; margin:32px 0 0; color:#3d3a4a; font-size:19px; line-height:1.55; }
 .portfolio-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:36px; }
@@ -172,7 +172,7 @@
   .portfolio-shell { width:calc(100% - 32px); }
   .portfolio-nav-inner { min-height:64px; }
   .portfolio-hero { padding-block:62px 48px; }
-  .portfolio-hero h1 { font-size:clamp(42px,12vw,62px); }
+  .portfolio-hero h1 { font-size:clamp(34px,9.5vw,46px); }
   .portfolio-hero-intro { font-size:16px; }
   .portfolio-section,.portfolio-travel { padding-block:58px; }
   .portfolio-work-wrap .portfolio-section,.portfolio-recognition .portfolio-section,.portfolio-press .portfolio-section,.portfolio-talks .portfolio-section { padding-block:58px; }
@@ -195,3 +195,6 @@
 @media (prefers-reduced-motion: reduce) {
   .portfolio *, .portfolio *::before, .portfolio *::after { scroll-behavior:auto!important; transition:none!important; animation:none!important; }
 }
+
+/* One typeface for headings, body copy, navigation, and small labels. */
+.portfolio.portfolio :where(*) { font-family:var(--body); }

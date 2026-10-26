@@ -31,7 +31,7 @@ export const experience = [
     company: "GTVAdvice",
     role: "Creator",
     tags: ["Community"],
-    description: "Built the go-to resource for technologists navigating the UK Global Talent Visa — demystifying one of the UK's most competitive visa routes and making the process more accessible for those who qualify but don't know where to start.",
+    description: "The Global Talent Visa is one of the UK's most competitive immigration routes for digital technology professionals. I went through the process myself, and now I help other technologists do the same, with a 70% endorsement rate: a guide for those going solo, and tailored support for those who'd rather not.",
     url: "https://gtvadvice.softr.app/"
   },
   {

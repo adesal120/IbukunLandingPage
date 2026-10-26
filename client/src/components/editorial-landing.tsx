@@ -72,7 +72,7 @@ const awards = [
     group: "Selected for",
     year: "2023",
     title: "Envision Accelerator, Cohort #6",
-    description: "",
+    description: "A community-driven, no-equity accelerator for young, underrepresented founders. Came with a non-dilutive grant, one-to-one mentoring, tailored workshops and a lifelong founder network.",
     url: achievements.find((item) => item.title.includes("Envision"))?.url,
   },
   {
@@ -234,8 +234,7 @@ export default function EditorialLanding() {
                 <LinkOut className="portfolio-current-card" href={experience.find((item) => item.company === "GTVAdvice")!.url}>
                   <p className="portfolio-role portfolio-eyebrow">Founder</p>
                   <h3>GTVAdvice</h3>
-                  <p>The Global Talent Visa is one of the UK&apos;s most competitive immigration routes for digital technology professionals. I went through the process myself, and now I help other technologists do the same, with a 70% endorsement rate: a guide for those going solo, and tailored support for those who&apos;d rather not.</p>
-                  <p>70% endorsement rate.</p>
+                  <p>The Global Talent Visa is one of the UK&apos;s most competitive immigration routes. I got through it the hard way, so others don&apos;t have to: a comprehensive guide library for the self-starters, tailored application support for everyone else, and a 70% endorsement rate to show for it.</p>
                   <span className="portfolio-card-link">Visit <span aria-hidden="true">→</span></span>
                 </LinkOut>
               </div>
@@ -358,7 +357,7 @@ export default function EditorialLanding() {
           <section className="portfolio-shell portfolio-section" id="recognition">
             <div className="portfolio-recognition-head">
               <h2>Recognition</h2>
-              <p>Mostly from the Afriktrip years. Working on the sequel.</p>
+              <p>The receipts.</p>
             </div>
             <div className="portfolio-recognition-columns">
               {["Won", "Selected for"].map((group) => (
